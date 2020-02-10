@@ -1,0 +1,28 @@
+ {
+    "VLAN": {
+        "Vlan130": {
+            "members": [
+                "Ethernet0"
+            ], 
+            "vlanid": "130"
+        },
+        "Vlan131": {
+            "members": [
+                "Ethernet5"
+            ],
+            "vlanid": "131"
+        }
+    },
+    "VLAN_MEMBER": {
+        "Vlan130|Ethernet0": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan131|Ethernet5": {
+            "tagging_mode": "untagged"
+        }
+    },
+    "VLAN_INTERFACE": {
+        "Vlan130|192.168.1.1/24": {},
+        "Vlan131|10.0.0.1/31": {}
+    }
+}

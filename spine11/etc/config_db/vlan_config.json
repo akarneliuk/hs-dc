@@ -1,0 +1,28 @@
+ {
+    "VLAN": {
+        "Vlan110": {
+            "members": [
+                "Ethernet0"
+            ], 
+            "vlanid": "110"
+        },
+        "Vlan111": {
+            "members": [
+                "Ethernet1"
+            ],
+            "vlanid": "111"
+        }
+    },
+    "VLAN_MEMBER": {
+        "Vlan110|Ethernet0": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan111|Ethernet1": {
+            "tagging_mode": "untagged"
+        }
+    },
+    "VLAN_INTERFACE": {
+        "Vlan110|10.0.0.0/31": {},
+        "Vlan111|10.0.0.2/31": {}
+    }
+}

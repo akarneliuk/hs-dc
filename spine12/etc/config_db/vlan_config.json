@@ -1,0 +1,28 @@
+ {
+    "VLAN": {
+        "Vlan140": {
+            "members": [
+                "Ethernet0"
+            ], 
+            "vlanid": "140"
+        },
+        "Vlan141": {
+            "members": [
+                "Ethernet5"
+            ],
+            "vlanid": "141"
+        }
+    },
+    "VLAN_MEMBER": {
+        "Vlan140|Ethernet0": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan141|Ethernet5": {
+            "tagging_mode": "untagged"
+        }
+    },
+    "VLAN_INTERFACE": {
+        "Vlan140|192.168.2.1/24": {},
+        "Vlan141|10.0.0.1/31": {}
+    }
+}
