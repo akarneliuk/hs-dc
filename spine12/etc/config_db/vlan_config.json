@@ -1,28 +1,29 @@
- {
+{
     "VLAN": {
-        "Vlan140": {
+        "Vlan120": {
             "members": [
                 "Ethernet0"
             ], 
-            "vlanid": "140"
+            "vlanid": "120"
         },
-        "Vlan141": {
+        "Vlan121": {
             "members": [
-                "Ethernet5"
+                "Ethernet1"
             ],
-            "vlanid": "141"
+            "vlanid": "121"
         }
     },
     "VLAN_MEMBER": {
-        "Vlan140|Ethernet0": {
+        "Vlan120|Ethernet0": {
             "tagging_mode": "untagged"
         },
-        "Vlan141|Ethernet5": {
+        "Vlan121|Ethernet1": {
             "tagging_mode": "untagged"
         }
     },
     "VLAN_INTERFACE": {
-        "Vlan140|192.168.2.1/24": {},
-        "Vlan141|10.0.0.1/31": {}
+        "Vlan120|10.0.0.4/31": {},
+        "Vlan121|10.0.0.6/31": {}
     }
 }
+

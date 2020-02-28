@@ -15,4 +15,5 @@ cp -f /sonic/etc/swss/config.d/00-copp.config.json /etc/swss/config.d/default_co
 cp -rf /sonic/etc/quagga /etc/
 ip netns exec sw_net ip link set dev sw_port0 addr $SYSTEM_MAC_ADDRESS
 ip netns exec sw_net ip link set dev sw_port5 addr $SYSTEM_MAC_ADDRESS
+ip netns exec sw_net ip link set dev sw_port6 addr $SYSTEM_MAC_ADDRESS
 supervisord

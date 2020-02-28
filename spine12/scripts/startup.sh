@@ -1,6 +1,6 @@
 [ -d /etc/sonic ] || mkdir -p /etc/sonic
 
-SYSTEM_MAC_ADDRESS=00:dc:5e:01:01:02
+SYSTEM_MAC_ADDRESS=00:dc:5e:01:00:02
 ip link add eth0 addr $SYSTEM_MAC_ADDRESS type dummy
 
 if [ -f /etc/sonic/config_db.json ]; then
@@ -14,5 +14,5 @@ fi
 cp -f /sonic/etc/swss/config.d/00-copp.config.json /etc/swss/config.d/default_config.json
 cp -rf /sonic/etc/quagga /etc/
 ip netns exec sw_net ip link set dev sw_port0 addr $SYSTEM_MAC_ADDRESS
-ip netns exec sw_net ip link set dev sw_port5 addr $SYSTEM_MAC_ADDRESS
+ip netns exec sw_net ip link set dev sw_port1 addr $SYSTEM_MAC_ADDRESS
 supervisord

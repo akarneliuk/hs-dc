@@ -11,6 +11,12 @@
                 "Ethernet5"
             ],
             "vlanid": "131"
+        },
+        "Vlan132": {
+            "members": [
+                "Ethernet6"
+            ],
+            "vlanid": "132"
         }
     },
     "VLAN_MEMBER": {
@@ -19,10 +25,14 @@
         },
         "Vlan131|Ethernet5": {
             "tagging_mode": "untagged"
+        },
+        "Vlan132|Ethernet6": {
+            "tagging_mode": "untagged"
         }
     },
     "VLAN_INTERFACE": {
         "Vlan130|192.168.1.1/24": {},
-        "Vlan131|10.0.0.1/31": {}
+        "Vlan131|10.0.0.1/31": {},
+        "Vlan132|10.0.0.5/31": {}
     }
 }
