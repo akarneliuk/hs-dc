@@ -80,7 +80,7 @@ hosts:
     dev_type: ubuntu
     connection_point: leaf14
   - name: host5
-    pod: A
+    pod: B
     dev_type: ubuntu
     connection_point: leaf21
   - name: host6
