@@ -19,10 +19,22 @@ spines:
   - name: spine12
     pod: A
     dev_type: microsoft-sonic
+  - name: spine13
+    pod: A
+    dev_type: microsoft-sonic
+  - name: spine14
+    pod: A
+    dev_type: microsoft-sonic
   - name: spine21
     pod: B
     dev_type: microsoft-sonic
   - name: spine22
+    pod: B
+    dev_type: microsoft-sonic
+  - name: spine23
+    pod: B
+    dev_type: microsoft-sonic
+  - name: spine24
     pod: B
     dev_type: microsoft-sonic
 leafs:
