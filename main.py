@@ -9,12 +9,19 @@ import yaml
 path_inventory = 'inventory/build.yaml'
 path_output = 'topology/autogen.gv'
 
+
+# User-defined functions
+def yaml_dict(file_path):
+    with open(file_path, 'r') as temp_file:
+        temp_dict = yaml.load(temp_file.read(), Loader=yaml.Loader)
+        return temp_dict
+
+
 # Body
 if __name__ == '__main__':
-    with open(path_inventory, 'r') as temp_file:
-        inventory = yaml.load(temp_file.read(), Loader=yaml.Loader)
+    inventory = yaml_dict(path_inventory)
 
-    dot = Graph(comment='Data Centre', format='png')
+    dot = Graph(comment='Data Centre', format='png', node_attr={'color': 'deepskyblue1', 'style': 'filled'})
 
     # Adding the devices
     for dev_role, dev_list in inventory.items():

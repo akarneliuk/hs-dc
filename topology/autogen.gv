@@ -1,5 +1,6 @@
 // Data Centre
 graph {
+	node [color=deepskyblue1 style=filled]
 	aggs1 [dev_type="microsoft-sonic"]
 	aggs2 [dev_type="microsoft-sonic"]
 	aggs3 [dev_type="microsoft-sonic"]
