@@ -14,7 +14,7 @@ if __name__ == '__main__':
     with open(path_inventory, 'r') as temp_file:
         inventory = yaml.load(temp_file.read(), Loader=yaml.Loader)
 
-    dot = Graph(comment='Data Centre')
+    dot = Graph(comment='Data Centre', format='png')
 
     # Adding the devices
     for dev_role, dev_list in inventory.items():
