@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Modules
-from graphviz import Digraph
+from graphviz import Graph
 import yaml
 
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     with open(path_inventory, 'r') as temp_file:
         inventory = yaml.load(temp_file.read(), Loader=yaml.Loader)
 
-    dot = Digraph(comment='Data Centre')
+    dot = Graph(comment='Data Centre')
 
     # Adding the devices
     for dev_role, dev_list in inventory.items():
