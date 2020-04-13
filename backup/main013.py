@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 # Modules
+from graphviz import Graph
 import yaml
 import random
-import networkx
 
 
 # Variables
@@ -44,34 +44,30 @@ def set_colour(dev_info, dev_role):
 if __name__ == '__main__':
     inventory = yaml_dict(path_inventory)
 
-    DG = networkx.Graph(label='Data Centre')
+    dot = Graph(comment='Data Centre', format='png', node_attr={'style': 'filled'})
 
     # Adding the devices
     for dev_group, dev_list in inventory.items():
         for elem in dev_list:
-            DG.add_node(elem['name'], pod=elem['pod'], dev_type=elem['dev_type'], style='filled', fillcolor=set_colour(elem, dev_group))
+            dot.attr('node', color=set_colour(elem, dev_group))
+            dot.node(elem['name'], pod=elem['pod'], dev_type=elem['dev_type'])
 
     # Adding the nodes
     for le in inventory['leafs']:
         for ho in inventory['hosts']:
            if ho['connection_point'] == le['name']:
-               DG.add_edge(le['name'], ho['name'], link_type='link_customer')
+               dot.edge(le['name'], ho['name'], type='link_customer')
 
     for sp in inventory['spines']:
         for le in inventory['leafs']:
            if sp['pod'] == le['pod']:
-               DG.add_edge(sp['name'], le['name'], link_type='link_dc')
+               dot.edge(sp['name'], le['name'], type='link_dc')
 
     for ag in inventory['aggs']:
         for sp in inventory['spines']:
-               DG.add_edge(ag['name'], sp['name'], link_type='link_dc')
-
-    # Print the graph
-    VG = networkx.drawing.nx_agraph.to_agraph(DG)
+            dot.edge(ag['name'], sp['name'], type='link_dc')
 
     with open(path_output, 'w') as file:
-        file.write(str(VG))
+        file.write(dot.source)
 
-    VG.layout('dot')
-    VG.draw(f'{path_output}.png')
-
+    dot.render(path_output, view=True)

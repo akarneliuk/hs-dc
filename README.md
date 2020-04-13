@@ -10,6 +10,7 @@ There are plenty of technical challenges associated with the build of the hyper-
 - Linux: CentOS 7
 - Containers: Docker 19.03.8
 - Automation and orchestartion: Python 3.8
+- Graph modelling: NetworkX 2.4
 - Visualisation: Graphviz 2.30.1
 
 ## Structure
@@ -37,6 +38,17 @@ Release `0.1.2`:
 
 Release `0.1.3`:
 - Modifying the colouring so that each pod and each aggs have their own colours.
+
+Release `0.2.0`:
+- The generation of a network graph is taken from the Graphviz module to NetworkX as it allows to do math operations on graph.
+- The Graphviz is used only for visualisation of the graph, not for its build.
+- The content of the `requirements.txt` is changed.
+- The original `main.py` is moved to `backup` folder and is named now `main013.py`. Same is done for `requirements.txt`.
+- The Bash script `prepare.sh` also installs the `graphviz-devel` package necessary for Python's `pygraphviz` to work.
+
+## Additional resources
+- NetworkX: https://networkx.github.io
+- Graphviz: http://graphviz.org
 
 # Do you want to automate network like a profi?
 Join the network automation course: http://training.karneliuk.com

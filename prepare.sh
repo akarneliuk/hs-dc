@@ -5,3 +5,4 @@ wget http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/graphviz-2.30.1
 
 # Install the Graphviz
 sudo yum localinstall graphviz-2.30.1-21.el7.x86_64.rpm 
+sudo yum install -y graphviz-devel
