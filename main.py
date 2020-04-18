@@ -8,11 +8,13 @@ import networkx
 
 # Variables
 path_inventory = 'inventory/build.yaml'
+parh_resources = 'inventory/resources.yaml'
 path_output = 'topology/autogen.gv'
 
 colours = ['deepskyblue', 'gold', 'lightgrey', 'orangered', 'cyan', 'red', 'magenta', 'coral']
 chosen_colours = {}
 
+primitives = {}
 
 # User-defined functions
 def yaml_dict(file_path):
@@ -43,28 +45,65 @@ def set_colour(dev_info, dev_role):
 # Body
 if __name__ == '__main__':
     inventory = yaml_dict(path_inventory)
+    resources = yaml_dict(parh_resources)
 
     DG = networkx.Graph(label='Data Centre')
 
     # Adding the devices
+    dev_id = 0
+
     for dev_group, dev_list in inventory.items():
         for elem in dev_list:
-            DG.add_node(elem['name'], pod=elem['pod'], dev_type=elem['dev_type'], style='filled', fillcolor=set_colour(elem, dev_group))
+            DG.add_node(elem['name'], pod=elem['pod'], 
+                        dev_type=elem['dev_type'],
+                        style='filled', fillcolor=set_colour(elem, dev_group))
 
-    # Adding the nodes
+            if dev_group in ['aggs', 'spines', 'leafs']:
+                DG.nodes[elem['name']]['bgp_asn'] = resources['bgp']['asn'] + dev_id
+                DG.nodes[elem['name']]['label'] = f'{elem["name"]}\n{resources["bgp"]["asn"] + dev_id}'
+
+                dev_id += 1
+
+    # Adding the links
+    if_id = 0
+
     for le in inventory['leafs']:
         for ho in inventory['hosts']:
            if ho['connection_point'] == le['name']:
-               DG.add_edge(le['name'], ho['name'], link_type='link_customer')
+               DG.add_node(f'iface-{if_id}', label='Eth', dev_type='port')
+               DG.add_edge(le['name'], f'iface-{if_id}', phy='port', color='coral')
+
+               DG.add_node(f'iface-{if_id + 1}', label='Eth', dev_type='port')
+               DG.add_edge(ho['name'], f'iface-{if_id + 1}', phy='port', color='coral')
+
+               DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='customer', color='indigo')
+
+               if_id += 2
 
     for sp in inventory['spines']:
         for le in inventory['leafs']:
            if sp['pod'] == le['pod']:
-               DG.add_edge(sp['name'], le['name'], link_type='link_dc')
+               DG.add_node(f'iface-{if_id}', label='Eth', dev_type='port')
+               DG.add_edge(sp['name'], f'iface-{if_id}', phy='port', color='coral')
+
+               DG.add_node(f'iface-{if_id + 1}', label='Eth', dev_type='port')
+               DG.add_edge(le['name'], f'iface-{if_id + 1}', phy='port', color='coral')
+
+               DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='dc', color='indigo')
+
+               if_id += 2
 
     for ag in inventory['aggs']:
         for sp in inventory['spines']:
-               DG.add_edge(ag['name'], sp['name'], link_type='link_dc')
+               DG.add_node(f'iface-{if_id}', label='Eth', dev_type='port')
+               DG.add_edge(ag['name'], f'iface-{if_id}', phy='port', color='coral')
+
+               DG.add_node(f'iface-{if_id + 1}', label='Eth', dev_type='port')
+               DG.add_edge(sp['name'], f'iface-{if_id + 1}', phy='port', color='coral')
+
+               DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='dc', color='indigo')
+
+               if_id += 2
 
     # Print the graph
     VG = networkx.drawing.nx_agraph.to_agraph(DG)

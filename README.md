@@ -46,6 +46,11 @@ Release `0.2.0`:
 - The original `main.py` is moved to `backup` folder and is named now `main013.py`. Same is done for `requirements.txt`.
 - The Bash script `prepare.sh` also installs the `graphviz-devel` package necessary for Python's `pygraphviz` to work.
 
+Release `0.2.1`:
+- Added `resource.yaml` file in `inventory` directory. It contains some logical resources (BGP ASN, IP addresses), which are used in the topolgy graph build.
+- Added the attribute `bgp_asn` to the node containing the switches. It is automaticaly calculated to be unique per each network device.
+- Interfaces are created as nodes. So now the grap view is changed. The full link between devices looks like as `dev_a -- port -- port -- dev_b`.
+
 ## Additional resources
 - NetworkX: https://networkx.github.io
 - Graphviz: http://graphviz.org
