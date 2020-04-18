@@ -1,8 +1,21 @@
 ---
 bgp:
   asn: 65000
+
 ip:
   loop: 10.0.255.0/24
   dc: 10.0.0.0/24
   customer: 192.168.10.0/24
+
+ranks:
+  aggs: 1
+  if_aggs_spines: 2
+  if_spines_aggs: 3
+  spines: 4
+  if_spines_leafs: 5
+  if_leafs_spines: 6
+  leafs: 7
+  if_leafs_hosts: 8
+  if_hosts_leafs: 9
+  hosts: 10
 ...

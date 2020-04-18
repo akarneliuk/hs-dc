@@ -1,968 +1,1570 @@
 strict graph {
-	graph [label="Data Centre"];
+	graph [label="Data Centre",
+		rankdir=TD
+	];
 	node [label="\N"];
 	aggs1	 [bgp_asn=65000,
+		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=deepskyblue,
+		fillcolor=lightgrey,
 		label="aggs1
-65000",
+65000
+10.0.255.0",
+		loopback="10.0.255.0",
 		pod=None,
+		rank=1,
 		style=filled];
 	"iface-80"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-80"	 [color=coral,
+		ipv4="10.0.0.80/31",
+		label="Ethernet0
+10.0.0.80/31",
+		rank=2];
+	aggs1 -- "iface-80"	 [color=black,
 		phy=port];
 	"iface-82"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-82"	 [color=coral,
+		ipv4="10.0.0.82/31",
+		label="Ethernet1
+10.0.0.82/31",
+		rank=2];
+	aggs1 -- "iface-82"	 [color=black,
 		phy=port];
 	"iface-84"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-84"	 [color=coral,
+		ipv4="10.0.0.84/31",
+		label="Ethernet2
+10.0.0.84/31",
+		rank=2];
+	aggs1 -- "iface-84"	 [color=black,
 		phy=port];
 	"iface-86"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-86"	 [color=coral,
+		ipv4="10.0.0.86/31",
+		label="Ethernet3
+10.0.0.86/31",
+		rank=2];
+	aggs1 -- "iface-86"	 [color=black,
 		phy=port];
 	"iface-88"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-88"	 [color=coral,
+		ipv4="10.0.0.88/31",
+		label="Ethernet4
+10.0.0.88/31",
+		rank=2];
+	aggs1 -- "iface-88"	 [color=black,
 		phy=port];
 	"iface-90"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-90"	 [color=coral,
+		ipv4="10.0.0.90/31",
+		label="Ethernet5
+10.0.0.90/31",
+		rank=2];
+	aggs1 -- "iface-90"	 [color=black,
 		phy=port];
 	"iface-92"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-92"	 [color=coral,
+		ipv4="10.0.0.92/31",
+		label="Ethernet6
+10.0.0.92/31",
+		rank=2];
+	aggs1 -- "iface-92"	 [color=black,
 		phy=port];
 	"iface-94"	 [dev_type=port,
-		label=Eth];
-	aggs1 -- "iface-94"	 [color=coral,
+		ipv4="10.0.0.94/31",
+		label="Ethernet7
+10.0.0.94/31",
+		rank=2];
+	aggs1 -- "iface-94"	 [color=black,
 		phy=port];
 	"iface-81"	 [dev_type=port,
-		label=Eth];
-	"iface-80" -- "iface-81"	 [color=indigo,
+		ipv4="10.0.0.81/31",
+		label="Ethernet4
+10.0.0.81/31",
+		rank=3];
+	"iface-80" -- "iface-81"	 [color=coral,
+		linux_bridge=hs_br_80,
 		phy=wire,
 		role=dc];
 	"iface-83"	 [dev_type=port,
-		label=Eth];
-	"iface-82" -- "iface-83"	 [color=indigo,
+		ipv4="10.0.0.83/31",
+		label="Ethernet4
+10.0.0.83/31",
+		rank=3];
+	"iface-82" -- "iface-83"	 [color=coral,
+		linux_bridge=hs_br_82,
 		phy=wire,
 		role=dc];
 	"iface-85"	 [dev_type=port,
-		label=Eth];
-	"iface-84" -- "iface-85"	 [color=indigo,
+		ipv4="10.0.0.85/31",
+		label="Ethernet4
+10.0.0.85/31",
+		rank=3];
+	"iface-84" -- "iface-85"	 [color=coral,
+		linux_bridge=hs_br_84,
 		phy=wire,
 		role=dc];
 	"iface-87"	 [dev_type=port,
-		label=Eth];
-	"iface-86" -- "iface-87"	 [color=indigo,
+		ipv4="10.0.0.87/31",
+		label="Ethernet4
+10.0.0.87/31",
+		rank=3];
+	"iface-86" -- "iface-87"	 [color=coral,
+		linux_bridge=hs_br_86,
 		phy=wire,
 		role=dc];
 	"iface-89"	 [dev_type=port,
-		label=Eth];
-	"iface-88" -- "iface-89"	 [color=indigo,
+		ipv4="10.0.0.89/31",
+		label="Ethernet4
+10.0.0.89/31",
+		rank=3];
+	"iface-88" -- "iface-89"	 [color=coral,
+		linux_bridge=hs_br_88,
 		phy=wire,
 		role=dc];
 	"iface-91"	 [dev_type=port,
-		label=Eth];
-	"iface-90" -- "iface-91"	 [color=indigo,
+		ipv4="10.0.0.91/31",
+		label="Ethernet4
+10.0.0.91/31",
+		rank=3];
+	"iface-90" -- "iface-91"	 [color=coral,
+		linux_bridge=hs_br_90,
 		phy=wire,
 		role=dc];
 	"iface-93"	 [dev_type=port,
-		label=Eth];
-	"iface-92" -- "iface-93"	 [color=indigo,
+		ipv4="10.0.0.93/31",
+		label="Ethernet4
+10.0.0.93/31",
+		rank=3];
+	"iface-92" -- "iface-93"	 [color=coral,
+		linux_bridge=hs_br_92,
 		phy=wire,
 		role=dc];
 	"iface-95"	 [dev_type=port,
-		label=Eth];
-	"iface-94" -- "iface-95"	 [color=indigo,
+		ipv4="10.0.0.95/31",
+		label="Ethernet4
+10.0.0.95/31",
+		rank=3];
+	"iface-94" -- "iface-95"	 [color=coral,
+		linux_bridge=hs_br_94,
 		phy=wire,
 		role=dc];
 	aggs2	 [bgp_asn=65001,
+		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="aggs2
-65001",
+65001
+10.0.255.1",
+		loopback="10.0.255.1",
 		pod=None,
+		rank=1,
 		style=filled];
 	"iface-96"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-96"	 [color=coral,
+		ipv4="10.0.0.96/31",
+		label="Ethernet0
+10.0.0.96/31",
+		rank=2];
+	aggs2 -- "iface-96"	 [color=black,
 		phy=port];
 	"iface-98"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-98"	 [color=coral,
+		ipv4="10.0.0.98/31",
+		label="Ethernet1
+10.0.0.98/31",
+		rank=2];
+	aggs2 -- "iface-98"	 [color=black,
 		phy=port];
 	"iface-100"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-100"	 [color=coral,
+		ipv4="10.0.0.100/31",
+		label="Ethernet2
+10.0.0.100/31",
+		rank=2];
+	aggs2 -- "iface-100"	 [color=black,
 		phy=port];
 	"iface-102"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-102"	 [color=coral,
+		ipv4="10.0.0.102/31",
+		label="Ethernet3
+10.0.0.102/31",
+		rank=2];
+	aggs2 -- "iface-102"	 [color=black,
 		phy=port];
 	"iface-104"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-104"	 [color=coral,
+		ipv4="10.0.0.104/31",
+		label="Ethernet4
+10.0.0.104/31",
+		rank=2];
+	aggs2 -- "iface-104"	 [color=black,
 		phy=port];
 	"iface-106"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-106"	 [color=coral,
+		ipv4="10.0.0.106/31",
+		label="Ethernet5
+10.0.0.106/31",
+		rank=2];
+	aggs2 -- "iface-106"	 [color=black,
 		phy=port];
 	"iface-108"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-108"	 [color=coral,
+		ipv4="10.0.0.108/31",
+		label="Ethernet6
+10.0.0.108/31",
+		rank=2];
+	aggs2 -- "iface-108"	 [color=black,
 		phy=port];
 	"iface-110"	 [dev_type=port,
-		label=Eth];
-	aggs2 -- "iface-110"	 [color=coral,
+		ipv4="10.0.0.110/31",
+		label="Ethernet7
+10.0.0.110/31",
+		rank=2];
+	aggs2 -- "iface-110"	 [color=black,
 		phy=port];
 	"iface-97"	 [dev_type=port,
-		label=Eth];
-	"iface-96" -- "iface-97"	 [color=indigo,
+		ipv4="10.0.0.97/31",
+		label="Ethernet5
+10.0.0.97/31",
+		rank=3];
+	"iface-96" -- "iface-97"	 [color=coral,
+		linux_bridge=hs_br_96,
 		phy=wire,
 		role=dc];
 	"iface-99"	 [dev_type=port,
-		label=Eth];
-	"iface-98" -- "iface-99"	 [color=indigo,
+		ipv4="10.0.0.99/31",
+		label="Ethernet5
+10.0.0.99/31",
+		rank=3];
+	"iface-98" -- "iface-99"	 [color=coral,
+		linux_bridge=hs_br_98,
 		phy=wire,
 		role=dc];
 	"iface-101"	 [dev_type=port,
-		label=Eth];
-	"iface-100" -- "iface-101"	 [color=indigo,
+		ipv4="10.0.0.101/31",
+		label="Ethernet5
+10.0.0.101/31",
+		rank=3];
+	"iface-100" -- "iface-101"	 [color=coral,
+		linux_bridge=hs_br_100,
 		phy=wire,
 		role=dc];
 	"iface-103"	 [dev_type=port,
-		label=Eth];
-	"iface-102" -- "iface-103"	 [color=indigo,
+		ipv4="10.0.0.103/31",
+		label="Ethernet5
+10.0.0.103/31",
+		rank=3];
+	"iface-102" -- "iface-103"	 [color=coral,
+		linux_bridge=hs_br_102,
 		phy=wire,
 		role=dc];
 	"iface-105"	 [dev_type=port,
-		label=Eth];
-	"iface-104" -- "iface-105"	 [color=indigo,
+		ipv4="10.0.0.105/31",
+		label="Ethernet5
+10.0.0.105/31",
+		rank=3];
+	"iface-104" -- "iface-105"	 [color=coral,
+		linux_bridge=hs_br_104,
 		phy=wire,
 		role=dc];
 	"iface-107"	 [dev_type=port,
-		label=Eth];
-	"iface-106" -- "iface-107"	 [color=indigo,
+		ipv4="10.0.0.107/31",
+		label="Ethernet5
+10.0.0.107/31",
+		rank=3];
+	"iface-106" -- "iface-107"	 [color=coral,
+		linux_bridge=hs_br_106,
 		phy=wire,
 		role=dc];
 	"iface-109"	 [dev_type=port,
-		label=Eth];
-	"iface-108" -- "iface-109"	 [color=indigo,
+		ipv4="10.0.0.109/31",
+		label="Ethernet5
+10.0.0.109/31",
+		rank=3];
+	"iface-108" -- "iface-109"	 [color=coral,
+		linux_bridge=hs_br_108,
 		phy=wire,
 		role=dc];
 	"iface-111"	 [dev_type=port,
-		label=Eth];
-	"iface-110" -- "iface-111"	 [color=indigo,
+		ipv4="10.0.0.111/31",
+		label="Ethernet5
+10.0.0.111/31",
+		rank=3];
+	"iface-110" -- "iface-111"	 [color=coral,
+		linux_bridge=hs_br_110,
 		phy=wire,
 		role=dc];
 	aggs3	 [bgp_asn=65002,
+		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="aggs3
-65002",
+65002
+10.0.255.2",
+		loopback="10.0.255.2",
 		pod=None,
+		rank=1,
 		style=filled];
 	"iface-112"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-112"	 [color=coral,
+		ipv4="10.0.0.112/31",
+		label="Ethernet0
+10.0.0.112/31",
+		rank=2];
+	aggs3 -- "iface-112"	 [color=black,
 		phy=port];
 	"iface-114"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-114"	 [color=coral,
+		ipv4="10.0.0.114/31",
+		label="Ethernet1
+10.0.0.114/31",
+		rank=2];
+	aggs3 -- "iface-114"	 [color=black,
 		phy=port];
 	"iface-116"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-116"	 [color=coral,
+		ipv4="10.0.0.116/31",
+		label="Ethernet2
+10.0.0.116/31",
+		rank=2];
+	aggs3 -- "iface-116"	 [color=black,
 		phy=port];
 	"iface-118"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-118"	 [color=coral,
+		ipv4="10.0.0.118/31",
+		label="Ethernet3
+10.0.0.118/31",
+		rank=2];
+	aggs3 -- "iface-118"	 [color=black,
 		phy=port];
 	"iface-120"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-120"	 [color=coral,
+		ipv4="10.0.0.120/31",
+		label="Ethernet4
+10.0.0.120/31",
+		rank=2];
+	aggs3 -- "iface-120"	 [color=black,
 		phy=port];
 	"iface-122"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-122"	 [color=coral,
+		ipv4="10.0.0.122/31",
+		label="Ethernet5
+10.0.0.122/31",
+		rank=2];
+	aggs3 -- "iface-122"	 [color=black,
 		phy=port];
 	"iface-124"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-124"	 [color=coral,
+		ipv4="10.0.0.124/31",
+		label="Ethernet6
+10.0.0.124/31",
+		rank=2];
+	aggs3 -- "iface-124"	 [color=black,
 		phy=port];
 	"iface-126"	 [dev_type=port,
-		label=Eth];
-	aggs3 -- "iface-126"	 [color=coral,
+		ipv4="10.0.0.126/31",
+		label="Ethernet7
+10.0.0.126/31",
+		rank=2];
+	aggs3 -- "iface-126"	 [color=black,
 		phy=port];
 	"iface-113"	 [dev_type=port,
-		label=Eth];
-	"iface-112" -- "iface-113"	 [color=indigo,
+		ipv4="10.0.0.113/31",
+		label="Ethernet6
+10.0.0.113/31",
+		rank=3];
+	"iface-112" -- "iface-113"	 [color=coral,
+		linux_bridge=hs_br_112,
 		phy=wire,
 		role=dc];
 	"iface-115"	 [dev_type=port,
-		label=Eth];
-	"iface-114" -- "iface-115"	 [color=indigo,
+		ipv4="10.0.0.115/31",
+		label="Ethernet6
+10.0.0.115/31",
+		rank=3];
+	"iface-114" -- "iface-115"	 [color=coral,
+		linux_bridge=hs_br_114,
 		phy=wire,
 		role=dc];
 	"iface-117"	 [dev_type=port,
-		label=Eth];
-	"iface-116" -- "iface-117"	 [color=indigo,
+		ipv4="10.0.0.117/31",
+		label="Ethernet6
+10.0.0.117/31",
+		rank=3];
+	"iface-116" -- "iface-117"	 [color=coral,
+		linux_bridge=hs_br_116,
 		phy=wire,
 		role=dc];
 	"iface-119"	 [dev_type=port,
-		label=Eth];
-	"iface-118" -- "iface-119"	 [color=indigo,
+		ipv4="10.0.0.119/31",
+		label="Ethernet6
+10.0.0.119/31",
+		rank=3];
+	"iface-118" -- "iface-119"	 [color=coral,
+		linux_bridge=hs_br_118,
 		phy=wire,
 		role=dc];
 	"iface-121"	 [dev_type=port,
-		label=Eth];
-	"iface-120" -- "iface-121"	 [color=indigo,
+		ipv4="10.0.0.121/31",
+		label="Ethernet6
+10.0.0.121/31",
+		rank=3];
+	"iface-120" -- "iface-121"	 [color=coral,
+		linux_bridge=hs_br_120,
 		phy=wire,
 		role=dc];
 	"iface-123"	 [dev_type=port,
-		label=Eth];
-	"iface-122" -- "iface-123"	 [color=indigo,
+		ipv4="10.0.0.123/31",
+		label="Ethernet6
+10.0.0.123/31",
+		rank=3];
+	"iface-122" -- "iface-123"	 [color=coral,
+		linux_bridge=hs_br_122,
 		phy=wire,
 		role=dc];
 	"iface-125"	 [dev_type=port,
-		label=Eth];
-	"iface-124" -- "iface-125"	 [color=indigo,
+		ipv4="10.0.0.125/31",
+		label="Ethernet6
+10.0.0.125/31",
+		rank=3];
+	"iface-124" -- "iface-125"	 [color=coral,
+		linux_bridge=hs_br_124,
 		phy=wire,
 		role=dc];
 	"iface-127"	 [dev_type=port,
-		label=Eth];
-	"iface-126" -- "iface-127"	 [color=indigo,
+		ipv4="10.0.0.127/31",
+		label="Ethernet6
+10.0.0.127/31",
+		rank=3];
+	"iface-126" -- "iface-127"	 [color=coral,
+		linux_bridge=hs_br_126,
 		phy=wire,
 		role=dc];
 	aggs4	 [bgp_asn=65003,
+		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=orangered,
+		fillcolor=cyan,
 		label="aggs4
-65003",
+65003
+10.0.255.3",
+		loopback="10.0.255.3",
 		pod=None,
+		rank=1,
 		style=filled];
 	"iface-128"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-128"	 [color=coral,
+		ipv4="10.0.0.128/31",
+		label="Ethernet0
+10.0.0.128/31",
+		rank=2];
+	aggs4 -- "iface-128"	 [color=black,
 		phy=port];
 	"iface-130"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-130"	 [color=coral,
+		ipv4="10.0.0.130/31",
+		label="Ethernet1
+10.0.0.130/31",
+		rank=2];
+	aggs4 -- "iface-130"	 [color=black,
 		phy=port];
 	"iface-132"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-132"	 [color=coral,
+		ipv4="10.0.0.132/31",
+		label="Ethernet2
+10.0.0.132/31",
+		rank=2];
+	aggs4 -- "iface-132"	 [color=black,
 		phy=port];
 	"iface-134"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-134"	 [color=coral,
+		ipv4="10.0.0.134/31",
+		label="Ethernet3
+10.0.0.134/31",
+		rank=2];
+	aggs4 -- "iface-134"	 [color=black,
 		phy=port];
 	"iface-136"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-136"	 [color=coral,
+		ipv4="10.0.0.136/31",
+		label="Ethernet4
+10.0.0.136/31",
+		rank=2];
+	aggs4 -- "iface-136"	 [color=black,
 		phy=port];
 	"iface-138"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-138"	 [color=coral,
+		ipv4="10.0.0.138/31",
+		label="Ethernet5
+10.0.0.138/31",
+		rank=2];
+	aggs4 -- "iface-138"	 [color=black,
 		phy=port];
 	"iface-140"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-140"	 [color=coral,
+		ipv4="10.0.0.140/31",
+		label="Ethernet6
+10.0.0.140/31",
+		rank=2];
+	aggs4 -- "iface-140"	 [color=black,
 		phy=port];
 	"iface-142"	 [dev_type=port,
-		label=Eth];
-	aggs4 -- "iface-142"	 [color=coral,
+		ipv4="10.0.0.142/31",
+		label="Ethernet7
+10.0.0.142/31",
+		rank=2];
+	aggs4 -- "iface-142"	 [color=black,
 		phy=port];
 	"iface-129"	 [dev_type=port,
-		label=Eth];
-	"iface-128" -- "iface-129"	 [color=indigo,
+		ipv4="10.0.0.129/31",
+		label="Ethernet7
+10.0.0.129/31",
+		rank=3];
+	"iface-128" -- "iface-129"	 [color=coral,
+		linux_bridge=hs_br_128,
 		phy=wire,
 		role=dc];
 	"iface-131"	 [dev_type=port,
-		label=Eth];
-	"iface-130" -- "iface-131"	 [color=indigo,
+		ipv4="10.0.0.131/31",
+		label="Ethernet7
+10.0.0.131/31",
+		rank=3];
+	"iface-130" -- "iface-131"	 [color=coral,
+		linux_bridge=hs_br_130,
 		phy=wire,
 		role=dc];
 	"iface-133"	 [dev_type=port,
-		label=Eth];
-	"iface-132" -- "iface-133"	 [color=indigo,
+		ipv4="10.0.0.133/31",
+		label="Ethernet7
+10.0.0.133/31",
+		rank=3];
+	"iface-132" -- "iface-133"	 [color=coral,
+		linux_bridge=hs_br_132,
 		phy=wire,
 		role=dc];
 	"iface-135"	 [dev_type=port,
-		label=Eth];
-	"iface-134" -- "iface-135"	 [color=indigo,
+		ipv4="10.0.0.135/31",
+		label="Ethernet7
+10.0.0.135/31",
+		rank=3];
+	"iface-134" -- "iface-135"	 [color=coral,
+		linux_bridge=hs_br_134,
 		phy=wire,
 		role=dc];
 	"iface-137"	 [dev_type=port,
-		label=Eth];
-	"iface-136" -- "iface-137"	 [color=indigo,
+		ipv4="10.0.0.137/31",
+		label="Ethernet7
+10.0.0.137/31",
+		rank=3];
+	"iface-136" -- "iface-137"	 [color=coral,
+		linux_bridge=hs_br_136,
 		phy=wire,
 		role=dc];
 	"iface-139"	 [dev_type=port,
-		label=Eth];
-	"iface-138" -- "iface-139"	 [color=indigo,
+		ipv4="10.0.0.139/31",
+		label="Ethernet7
+10.0.0.139/31",
+		rank=3];
+	"iface-138" -- "iface-139"	 [color=coral,
+		linux_bridge=hs_br_138,
 		phy=wire,
 		role=dc];
 	"iface-141"	 [dev_type=port,
-		label=Eth];
-	"iface-140" -- "iface-141"	 [color=indigo,
+		ipv4="10.0.0.141/31",
+		label="Ethernet7
+10.0.0.141/31",
+		rank=3];
+	"iface-140" -- "iface-141"	 [color=coral,
+		linux_bridge=hs_br_140,
 		phy=wire,
 		role=dc];
 	"iface-143"	 [dev_type=port,
-		label=Eth];
-	"iface-142" -- "iface-143"	 [color=indigo,
+		ipv4="10.0.0.143/31",
+		label="Ethernet7
+10.0.0.143/31",
+		rank=3];
+	"iface-142" -- "iface-143"	 [color=coral,
+		linux_bridge=hs_br_142,
 		phy=wire,
 		role=dc];
 	spine11	 [bgp_asn=65004,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="spine11
-65004",
+65004
+10.0.255.4",
+		loopback="10.0.255.4",
 		pod=A,
+		rank=4,
 		style=filled];
 	"iface-16"	 [dev_type=port,
-		label=Eth];
-	spine11 -- "iface-16"	 [color=coral,
+		ipv4="10.0.0.16/31",
+		label="Ethernet0
+10.0.0.16/31",
+		rank=5];
+	spine11 -- "iface-16"	 [color=black,
 		phy=port];
 	"iface-18"	 [dev_type=port,
-		label=Eth];
-	spine11 -- "iface-18"	 [color=coral,
+		ipv4="10.0.0.18/31",
+		label="Ethernet1
+10.0.0.18/31",
+		rank=5];
+	spine11 -- "iface-18"	 [color=black,
 		phy=port];
 	"iface-20"	 [dev_type=port,
-		label=Eth];
-	spine11 -- "iface-20"	 [color=coral,
+		ipv4="10.0.0.20/31",
+		label="Ethernet2
+10.0.0.20/31",
+		rank=5];
+	spine11 -- "iface-20"	 [color=black,
 		phy=port];
 	"iface-22"	 [dev_type=port,
-		label=Eth];
-	spine11 -- "iface-22"	 [color=coral,
+		ipv4="10.0.0.22/31",
+		label="Ethernet3
+10.0.0.22/31",
+		rank=5];
+	spine11 -- "iface-22"	 [color=black,
 		phy=port];
-	spine11 -- "iface-81"	 [color=coral,
+	spine11 -- "iface-81"	 [color=black,
 		phy=port];
-	spine11 -- "iface-97"	 [color=coral,
+	spine11 -- "iface-97"	 [color=black,
 		phy=port];
-	spine11 -- "iface-113"	 [color=coral,
+	spine11 -- "iface-113"	 [color=black,
 		phy=port];
-	spine11 -- "iface-129"	 [color=coral,
+	spine11 -- "iface-129"	 [color=black,
 		phy=port];
 	"iface-17"	 [dev_type=port,
-		label=Eth];
-	"iface-16" -- "iface-17"	 [color=indigo,
+		ipv4="10.0.0.17/31",
+		label="Ethernet1
+10.0.0.17/31",
+		rank=6];
+	"iface-16" -- "iface-17"	 [color=coral,
+		linux_bridge=hs_br_16,
 		phy=wire,
 		role=dc];
 	"iface-19"	 [dev_type=port,
-		label=Eth];
-	"iface-18" -- "iface-19"	 [color=indigo,
+		ipv4="10.0.0.19/31",
+		label="Ethernet1
+10.0.0.19/31",
+		rank=6];
+	"iface-18" -- "iface-19"	 [color=coral,
+		linux_bridge=hs_br_18,
 		phy=wire,
 		role=dc];
 	"iface-21"	 [dev_type=port,
-		label=Eth];
-	"iface-20" -- "iface-21"	 [color=indigo,
+		ipv4="10.0.0.21/31",
+		label="Ethernet1
+10.0.0.21/31",
+		rank=6];
+	"iface-20" -- "iface-21"	 [color=coral,
+		linux_bridge=hs_br_20,
 		phy=wire,
 		role=dc];
 	"iface-23"	 [dev_type=port,
-		label=Eth];
-	"iface-22" -- "iface-23"	 [color=indigo,
+		ipv4="10.0.0.23/31",
+		label="Ethernet1
+10.0.0.23/31",
+		rank=6];
+	"iface-22" -- "iface-23"	 [color=coral,
+		linux_bridge=hs_br_22,
 		phy=wire,
 		role=dc];
 	spine12	 [bgp_asn=65005,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="spine12
-65005",
+65005
+10.0.255.5",
+		loopback="10.0.255.5",
 		pod=A,
+		rank=4,
 		style=filled];
 	"iface-24"	 [dev_type=port,
-		label=Eth];
-	spine12 -- "iface-24"	 [color=coral,
+		ipv4="10.0.0.24/31",
+		label="Ethernet0
+10.0.0.24/31",
+		rank=5];
+	spine12 -- "iface-24"	 [color=black,
 		phy=port];
 	"iface-26"	 [dev_type=port,
-		label=Eth];
-	spine12 -- "iface-26"	 [color=coral,
+		ipv4="10.0.0.26/31",
+		label="Ethernet1
+10.0.0.26/31",
+		rank=5];
+	spine12 -- "iface-26"	 [color=black,
 		phy=port];
 	"iface-28"	 [dev_type=port,
-		label=Eth];
-	spine12 -- "iface-28"	 [color=coral,
+		ipv4="10.0.0.28/31",
+		label="Ethernet2
+10.0.0.28/31",
+		rank=5];
+	spine12 -- "iface-28"	 [color=black,
 		phy=port];
 	"iface-30"	 [dev_type=port,
-		label=Eth];
-	spine12 -- "iface-30"	 [color=coral,
+		ipv4="10.0.0.30/31",
+		label="Ethernet3
+10.0.0.30/31",
+		rank=5];
+	spine12 -- "iface-30"	 [color=black,
 		phy=port];
-	spine12 -- "iface-83"	 [color=coral,
+	spine12 -- "iface-83"	 [color=black,
 		phy=port];
-	spine12 -- "iface-99"	 [color=coral,
+	spine12 -- "iface-99"	 [color=black,
 		phy=port];
-	spine12 -- "iface-115"	 [color=coral,
+	spine12 -- "iface-115"	 [color=black,
 		phy=port];
-	spine12 -- "iface-131"	 [color=coral,
+	spine12 -- "iface-131"	 [color=black,
 		phy=port];
 	"iface-25"	 [dev_type=port,
-		label=Eth];
-	"iface-24" -- "iface-25"	 [color=indigo,
+		ipv4="10.0.0.25/31",
+		label="Ethernet2
+10.0.0.25/31",
+		rank=6];
+	"iface-24" -- "iface-25"	 [color=coral,
+		linux_bridge=hs_br_24,
 		phy=wire,
 		role=dc];
 	"iface-27"	 [dev_type=port,
-		label=Eth];
-	"iface-26" -- "iface-27"	 [color=indigo,
+		ipv4="10.0.0.27/31",
+		label="Ethernet2
+10.0.0.27/31",
+		rank=6];
+	"iface-26" -- "iface-27"	 [color=coral,
+		linux_bridge=hs_br_26,
 		phy=wire,
 		role=dc];
 	"iface-29"	 [dev_type=port,
-		label=Eth];
-	"iface-28" -- "iface-29"	 [color=indigo,
+		ipv4="10.0.0.29/31",
+		label="Ethernet2
+10.0.0.29/31",
+		rank=6];
+	"iface-28" -- "iface-29"	 [color=coral,
+		linux_bridge=hs_br_28,
 		phy=wire,
 		role=dc];
 	"iface-31"	 [dev_type=port,
-		label=Eth];
-	"iface-30" -- "iface-31"	 [color=indigo,
+		ipv4="10.0.0.31/31",
+		label="Ethernet2
+10.0.0.31/31",
+		rank=6];
+	"iface-30" -- "iface-31"	 [color=coral,
+		linux_bridge=hs_br_30,
 		phy=wire,
 		role=dc];
 	spine13	 [bgp_asn=65006,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="spine13
-65006",
+65006
+10.0.255.6",
+		loopback="10.0.255.6",
 		pod=A,
+		rank=4,
 		style=filled];
 	"iface-32"	 [dev_type=port,
-		label=Eth];
-	spine13 -- "iface-32"	 [color=coral,
+		ipv4="10.0.0.32/31",
+		label="Ethernet0
+10.0.0.32/31",
+		rank=5];
+	spine13 -- "iface-32"	 [color=black,
 		phy=port];
 	"iface-34"	 [dev_type=port,
-		label=Eth];
-	spine13 -- "iface-34"	 [color=coral,
+		ipv4="10.0.0.34/31",
+		label="Ethernet1
+10.0.0.34/31",
+		rank=5];
+	spine13 -- "iface-34"	 [color=black,
 		phy=port];
 	"iface-36"	 [dev_type=port,
-		label=Eth];
-	spine13 -- "iface-36"	 [color=coral,
+		ipv4="10.0.0.36/31",
+		label="Ethernet2
+10.0.0.36/31",
+		rank=5];
+	spine13 -- "iface-36"	 [color=black,
 		phy=port];
 	"iface-38"	 [dev_type=port,
-		label=Eth];
-	spine13 -- "iface-38"	 [color=coral,
+		ipv4="10.0.0.38/31",
+		label="Ethernet3
+10.0.0.38/31",
+		rank=5];
+	spine13 -- "iface-38"	 [color=black,
 		phy=port];
-	spine13 -- "iface-85"	 [color=coral,
+	spine13 -- "iface-85"	 [color=black,
 		phy=port];
-	spine13 -- "iface-101"	 [color=coral,
+	spine13 -- "iface-101"	 [color=black,
 		phy=port];
-	spine13 -- "iface-117"	 [color=coral,
+	spine13 -- "iface-117"	 [color=black,
 		phy=port];
-	spine13 -- "iface-133"	 [color=coral,
+	spine13 -- "iface-133"	 [color=black,
 		phy=port];
 	"iface-33"	 [dev_type=port,
-		label=Eth];
-	"iface-32" -- "iface-33"	 [color=indigo,
+		ipv4="10.0.0.33/31",
+		label="Ethernet3
+10.0.0.33/31",
+		rank=6];
+	"iface-32" -- "iface-33"	 [color=coral,
+		linux_bridge=hs_br_32,
 		phy=wire,
 		role=dc];
 	"iface-35"	 [dev_type=port,
-		label=Eth];
-	"iface-34" -- "iface-35"	 [color=indigo,
+		ipv4="10.0.0.35/31",
+		label="Ethernet3
+10.0.0.35/31",
+		rank=6];
+	"iface-34" -- "iface-35"	 [color=coral,
+		linux_bridge=hs_br_34,
 		phy=wire,
 		role=dc];
 	"iface-37"	 [dev_type=port,
-		label=Eth];
-	"iface-36" -- "iface-37"	 [color=indigo,
+		ipv4="10.0.0.37/31",
+		label="Ethernet3
+10.0.0.37/31",
+		rank=6];
+	"iface-36" -- "iface-37"	 [color=coral,
+		linux_bridge=hs_br_36,
 		phy=wire,
 		role=dc];
 	"iface-39"	 [dev_type=port,
-		label=Eth];
-	"iface-38" -- "iface-39"	 [color=indigo,
+		ipv4="10.0.0.39/31",
+		label="Ethernet3
+10.0.0.39/31",
+		rank=6];
+	"iface-38" -- "iface-39"	 [color=coral,
+		linux_bridge=hs_br_38,
 		phy=wire,
 		role=dc];
 	spine14	 [bgp_asn=65007,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="spine14
-65007",
+65007
+10.0.255.7",
+		loopback="10.0.255.7",
 		pod=A,
+		rank=4,
 		style=filled];
 	"iface-40"	 [dev_type=port,
-		label=Eth];
-	spine14 -- "iface-40"	 [color=coral,
+		ipv4="10.0.0.40/31",
+		label="Ethernet0
+10.0.0.40/31",
+		rank=5];
+	spine14 -- "iface-40"	 [color=black,
 		phy=port];
 	"iface-42"	 [dev_type=port,
-		label=Eth];
-	spine14 -- "iface-42"	 [color=coral,
+		ipv4="10.0.0.42/31",
+		label="Ethernet1
+10.0.0.42/31",
+		rank=5];
+	spine14 -- "iface-42"	 [color=black,
 		phy=port];
 	"iface-44"	 [dev_type=port,
-		label=Eth];
-	spine14 -- "iface-44"	 [color=coral,
+		ipv4="10.0.0.44/31",
+		label="Ethernet2
+10.0.0.44/31",
+		rank=5];
+	spine14 -- "iface-44"	 [color=black,
 		phy=port];
 	"iface-46"	 [dev_type=port,
-		label=Eth];
-	spine14 -- "iface-46"	 [color=coral,
+		ipv4="10.0.0.46/31",
+		label="Ethernet3
+10.0.0.46/31",
+		rank=5];
+	spine14 -- "iface-46"	 [color=black,
 		phy=port];
-	spine14 -- "iface-87"	 [color=coral,
+	spine14 -- "iface-87"	 [color=black,
 		phy=port];
-	spine14 -- "iface-103"	 [color=coral,
+	spine14 -- "iface-103"	 [color=black,
 		phy=port];
-	spine14 -- "iface-119"	 [color=coral,
+	spine14 -- "iface-119"	 [color=black,
 		phy=port];
-	spine14 -- "iface-135"	 [color=coral,
+	spine14 -- "iface-135"	 [color=black,
 		phy=port];
 	"iface-41"	 [dev_type=port,
-		label=Eth];
-	"iface-40" -- "iface-41"	 [color=indigo,
+		ipv4="10.0.0.41/31",
+		label="Ethernet4
+10.0.0.41/31",
+		rank=6];
+	"iface-40" -- "iface-41"	 [color=coral,
+		linux_bridge=hs_br_40,
 		phy=wire,
 		role=dc];
 	"iface-43"	 [dev_type=port,
-		label=Eth];
-	"iface-42" -- "iface-43"	 [color=indigo,
+		ipv4="10.0.0.43/31",
+		label="Ethernet4
+10.0.0.43/31",
+		rank=6];
+	"iface-42" -- "iface-43"	 [color=coral,
+		linux_bridge=hs_br_42,
 		phy=wire,
 		role=dc];
 	"iface-45"	 [dev_type=port,
-		label=Eth];
-	"iface-44" -- "iface-45"	 [color=indigo,
+		ipv4="10.0.0.45/31",
+		label="Ethernet4
+10.0.0.45/31",
+		rank=6];
+	"iface-44" -- "iface-45"	 [color=coral,
+		linux_bridge=hs_br_44,
 		phy=wire,
 		role=dc];
 	"iface-47"	 [dev_type=port,
-		label=Eth];
-	"iface-46" -- "iface-47"	 [color=indigo,
+		ipv4="10.0.0.47/31",
+		label="Ethernet4
+10.0.0.47/31",
+		rank=6];
+	"iface-46" -- "iface-47"	 [color=coral,
+		linux_bridge=hs_br_46,
 		phy=wire,
 		role=dc];
 	spine21	 [bgp_asn=65008,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="spine21
-65008",
+65008
+10.0.255.8",
+		loopback="10.0.255.8",
 		pod=B,
+		rank=4,
 		style=filled];
 	"iface-48"	 [dev_type=port,
-		label=Eth];
-	spine21 -- "iface-48"	 [color=coral,
+		ipv4="10.0.0.48/31",
+		label="Ethernet0
+10.0.0.48/31",
+		rank=5];
+	spine21 -- "iface-48"	 [color=black,
 		phy=port];
 	"iface-50"	 [dev_type=port,
-		label=Eth];
-	spine21 -- "iface-50"	 [color=coral,
+		ipv4="10.0.0.50/31",
+		label="Ethernet1
+10.0.0.50/31",
+		rank=5];
+	spine21 -- "iface-50"	 [color=black,
 		phy=port];
 	"iface-52"	 [dev_type=port,
-		label=Eth];
-	spine21 -- "iface-52"	 [color=coral,
+		ipv4="10.0.0.52/31",
+		label="Ethernet2
+10.0.0.52/31",
+		rank=5];
+	spine21 -- "iface-52"	 [color=black,
 		phy=port];
 	"iface-54"	 [dev_type=port,
-		label=Eth];
-	spine21 -- "iface-54"	 [color=coral,
+		ipv4="10.0.0.54/31",
+		label="Ethernet3
+10.0.0.54/31",
+		rank=5];
+	spine21 -- "iface-54"	 [color=black,
 		phy=port];
-	spine21 -- "iface-89"	 [color=coral,
+	spine21 -- "iface-89"	 [color=black,
 		phy=port];
-	spine21 -- "iface-105"	 [color=coral,
+	spine21 -- "iface-105"	 [color=black,
 		phy=port];
-	spine21 -- "iface-121"	 [color=coral,
+	spine21 -- "iface-121"	 [color=black,
 		phy=port];
-	spine21 -- "iface-137"	 [color=coral,
+	spine21 -- "iface-137"	 [color=black,
 		phy=port];
 	"iface-49"	 [dev_type=port,
-		label=Eth];
-	"iface-48" -- "iface-49"	 [color=indigo,
+		ipv4="10.0.0.49/31",
+		label="Ethernet1
+10.0.0.49/31",
+		rank=6];
+	"iface-48" -- "iface-49"	 [color=coral,
+		linux_bridge=hs_br_48,
 		phy=wire,
 		role=dc];
 	"iface-51"	 [dev_type=port,
-		label=Eth];
-	"iface-50" -- "iface-51"	 [color=indigo,
+		ipv4="10.0.0.51/31",
+		label="Ethernet1
+10.0.0.51/31",
+		rank=6];
+	"iface-50" -- "iface-51"	 [color=coral,
+		linux_bridge=hs_br_50,
 		phy=wire,
 		role=dc];
 	"iface-53"	 [dev_type=port,
-		label=Eth];
-	"iface-52" -- "iface-53"	 [color=indigo,
+		ipv4="10.0.0.53/31",
+		label="Ethernet1
+10.0.0.53/31",
+		rank=6];
+	"iface-52" -- "iface-53"	 [color=coral,
+		linux_bridge=hs_br_52,
 		phy=wire,
 		role=dc];
 	"iface-55"	 [dev_type=port,
-		label=Eth];
-	"iface-54" -- "iface-55"	 [color=indigo,
+		ipv4="10.0.0.55/31",
+		label="Ethernet1
+10.0.0.55/31",
+		rank=6];
+	"iface-54" -- "iface-55"	 [color=coral,
+		linux_bridge=hs_br_54,
 		phy=wire,
 		role=dc];
 	spine22	 [bgp_asn=65009,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="spine22
-65009",
+65009
+10.0.255.9",
+		loopback="10.0.255.9",
 		pod=B,
+		rank=4,
 		style=filled];
 	"iface-56"	 [dev_type=port,
-		label=Eth];
-	spine22 -- "iface-56"	 [color=coral,
+		ipv4="10.0.0.56/31",
+		label="Ethernet0
+10.0.0.56/31",
+		rank=5];
+	spine22 -- "iface-56"	 [color=black,
 		phy=port];
 	"iface-58"	 [dev_type=port,
-		label=Eth];
-	spine22 -- "iface-58"	 [color=coral,
+		ipv4="10.0.0.58/31",
+		label="Ethernet1
+10.0.0.58/31",
+		rank=5];
+	spine22 -- "iface-58"	 [color=black,
 		phy=port];
 	"iface-60"	 [dev_type=port,
-		label=Eth];
-	spine22 -- "iface-60"	 [color=coral,
+		ipv4="10.0.0.60/31",
+		label="Ethernet2
+10.0.0.60/31",
+		rank=5];
+	spine22 -- "iface-60"	 [color=black,
 		phy=port];
 	"iface-62"	 [dev_type=port,
-		label=Eth];
-	spine22 -- "iface-62"	 [color=coral,
+		ipv4="10.0.0.62/31",
+		label="Ethernet3
+10.0.0.62/31",
+		rank=5];
+	spine22 -- "iface-62"	 [color=black,
 		phy=port];
-	spine22 -- "iface-91"	 [color=coral,
+	spine22 -- "iface-91"	 [color=black,
 		phy=port];
-	spine22 -- "iface-107"	 [color=coral,
+	spine22 -- "iface-107"	 [color=black,
 		phy=port];
-	spine22 -- "iface-123"	 [color=coral,
+	spine22 -- "iface-123"	 [color=black,
 		phy=port];
-	spine22 -- "iface-139"	 [color=coral,
+	spine22 -- "iface-139"	 [color=black,
 		phy=port];
 	"iface-57"	 [dev_type=port,
-		label=Eth];
-	"iface-56" -- "iface-57"	 [color=indigo,
+		ipv4="10.0.0.57/31",
+		label="Ethernet2
+10.0.0.57/31",
+		rank=6];
+	"iface-56" -- "iface-57"	 [color=coral,
+		linux_bridge=hs_br_56,
 		phy=wire,
 		role=dc];
 	"iface-59"	 [dev_type=port,
-		label=Eth];
-	"iface-58" -- "iface-59"	 [color=indigo,
+		ipv4="10.0.0.59/31",
+		label="Ethernet2
+10.0.0.59/31",
+		rank=6];
+	"iface-58" -- "iface-59"	 [color=coral,
+		linux_bridge=hs_br_58,
 		phy=wire,
 		role=dc];
 	"iface-61"	 [dev_type=port,
-		label=Eth];
-	"iface-60" -- "iface-61"	 [color=indigo,
+		ipv4="10.0.0.61/31",
+		label="Ethernet2
+10.0.0.61/31",
+		rank=6];
+	"iface-60" -- "iface-61"	 [color=coral,
+		linux_bridge=hs_br_60,
 		phy=wire,
 		role=dc];
 	"iface-63"	 [dev_type=port,
-		label=Eth];
-	"iface-62" -- "iface-63"	 [color=indigo,
+		ipv4="10.0.0.63/31",
+		label="Ethernet2
+10.0.0.63/31",
+		rank=6];
+	"iface-62" -- "iface-63"	 [color=coral,
+		linux_bridge=hs_br_62,
 		phy=wire,
 		role=dc];
 	spine23	 [bgp_asn=65010,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="spine23
-65010",
+65010
+10.0.255.10",
+		loopback="10.0.255.10",
 		pod=B,
+		rank=4,
 		style=filled];
 	"iface-64"	 [dev_type=port,
-		label=Eth];
-	spine23 -- "iface-64"	 [color=coral,
+		ipv4="10.0.0.64/31",
+		label="Ethernet0
+10.0.0.64/31",
+		rank=5];
+	spine23 -- "iface-64"	 [color=black,
 		phy=port];
 	"iface-66"	 [dev_type=port,
-		label=Eth];
-	spine23 -- "iface-66"	 [color=coral,
+		ipv4="10.0.0.66/31",
+		label="Ethernet1
+10.0.0.66/31",
+		rank=5];
+	spine23 -- "iface-66"	 [color=black,
 		phy=port];
 	"iface-68"	 [dev_type=port,
-		label=Eth];
-	spine23 -- "iface-68"	 [color=coral,
+		ipv4="10.0.0.68/31",
+		label="Ethernet2
+10.0.0.68/31",
+		rank=5];
+	spine23 -- "iface-68"	 [color=black,
 		phy=port];
 	"iface-70"	 [dev_type=port,
-		label=Eth];
-	spine23 -- "iface-70"	 [color=coral,
+		ipv4="10.0.0.70/31",
+		label="Ethernet3
+10.0.0.70/31",
+		rank=5];
+	spine23 -- "iface-70"	 [color=black,
 		phy=port];
-	spine23 -- "iface-93"	 [color=coral,
+	spine23 -- "iface-93"	 [color=black,
 		phy=port];
-	spine23 -- "iface-109"	 [color=coral,
+	spine23 -- "iface-109"	 [color=black,
 		phy=port];
-	spine23 -- "iface-125"	 [color=coral,
+	spine23 -- "iface-125"	 [color=black,
 		phy=port];
-	spine23 -- "iface-141"	 [color=coral,
+	spine23 -- "iface-141"	 [color=black,
 		phy=port];
 	"iface-65"	 [dev_type=port,
-		label=Eth];
-	"iface-64" -- "iface-65"	 [color=indigo,
+		ipv4="10.0.0.65/31",
+		label="Ethernet3
+10.0.0.65/31",
+		rank=6];
+	"iface-64" -- "iface-65"	 [color=coral,
+		linux_bridge=hs_br_64,
 		phy=wire,
 		role=dc];
 	"iface-67"	 [dev_type=port,
-		label=Eth];
-	"iface-66" -- "iface-67"	 [color=indigo,
+		ipv4="10.0.0.67/31",
+		label="Ethernet3
+10.0.0.67/31",
+		rank=6];
+	"iface-66" -- "iface-67"	 [color=coral,
+		linux_bridge=hs_br_66,
 		phy=wire,
 		role=dc];
 	"iface-69"	 [dev_type=port,
-		label=Eth];
-	"iface-68" -- "iface-69"	 [color=indigo,
+		ipv4="10.0.0.69/31",
+		label="Ethernet3
+10.0.0.69/31",
+		rank=6];
+	"iface-68" -- "iface-69"	 [color=coral,
+		linux_bridge=hs_br_68,
 		phy=wire,
 		role=dc];
 	"iface-71"	 [dev_type=port,
-		label=Eth];
-	"iface-70" -- "iface-71"	 [color=indigo,
+		ipv4="10.0.0.71/31",
+		label="Ethernet3
+10.0.0.71/31",
+		rank=6];
+	"iface-70" -- "iface-71"	 [color=coral,
+		linux_bridge=hs_br_70,
 		phy=wire,
 		role=dc];
 	spine24	 [bgp_asn=65011,
+		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="spine24
-65011",
+65011
+10.0.255.11",
+		loopback="10.0.255.11",
 		pod=B,
+		rank=4,
 		style=filled];
 	"iface-72"	 [dev_type=port,
-		label=Eth];
-	spine24 -- "iface-72"	 [color=coral,
+		ipv4="10.0.0.72/31",
+		label="Ethernet0
+10.0.0.72/31",
+		rank=5];
+	spine24 -- "iface-72"	 [color=black,
 		phy=port];
 	"iface-74"	 [dev_type=port,
-		label=Eth];
-	spine24 -- "iface-74"	 [color=coral,
+		ipv4="10.0.0.74/31",
+		label="Ethernet1
+10.0.0.74/31",
+		rank=5];
+	spine24 -- "iface-74"	 [color=black,
 		phy=port];
 	"iface-76"	 [dev_type=port,
-		label=Eth];
-	spine24 -- "iface-76"	 [color=coral,
+		ipv4="10.0.0.76/31",
+		label="Ethernet2
+10.0.0.76/31",
+		rank=5];
+	spine24 -- "iface-76"	 [color=black,
 		phy=port];
 	"iface-78"	 [dev_type=port,
-		label=Eth];
-	spine24 -- "iface-78"	 [color=coral,
+		ipv4="10.0.0.78/31",
+		label="Ethernet3
+10.0.0.78/31",
+		rank=5];
+	spine24 -- "iface-78"	 [color=black,
 		phy=port];
-	spine24 -- "iface-95"	 [color=coral,
+	spine24 -- "iface-95"	 [color=black,
 		phy=port];
-	spine24 -- "iface-111"	 [color=coral,
+	spine24 -- "iface-111"	 [color=black,
 		phy=port];
-	spine24 -- "iface-127"	 [color=coral,
+	spine24 -- "iface-127"	 [color=black,
 		phy=port];
-	spine24 -- "iface-143"	 [color=coral,
+	spine24 -- "iface-143"	 [color=black,
 		phy=port];
 	"iface-73"	 [dev_type=port,
-		label=Eth];
-	"iface-72" -- "iface-73"	 [color=indigo,
+		ipv4="10.0.0.73/31",
+		label="Ethernet4
+10.0.0.73/31",
+		rank=6];
+	"iface-72" -- "iface-73"	 [color=coral,
+		linux_bridge=hs_br_72,
 		phy=wire,
 		role=dc];
 	"iface-75"	 [dev_type=port,
-		label=Eth];
-	"iface-74" -- "iface-75"	 [color=indigo,
+		ipv4="10.0.0.75/31",
+		label="Ethernet4
+10.0.0.75/31",
+		rank=6];
+	"iface-74" -- "iface-75"	 [color=coral,
+		linux_bridge=hs_br_74,
 		phy=wire,
 		role=dc];
 	"iface-77"	 [dev_type=port,
-		label=Eth];
-	"iface-76" -- "iface-77"	 [color=indigo,
+		ipv4="10.0.0.77/31",
+		label="Ethernet4
+10.0.0.77/31",
+		rank=6];
+	"iface-76" -- "iface-77"	 [color=coral,
+		linux_bridge=hs_br_76,
 		phy=wire,
 		role=dc];
 	"iface-79"	 [dev_type=port,
-		label=Eth];
-	"iface-78" -- "iface-79"	 [color=indigo,
+		ipv4="10.0.0.79/31",
+		label="Ethernet4
+10.0.0.79/31",
+		rank=6];
+	"iface-78" -- "iface-79"	 [color=coral,
+		linux_bridge=hs_br_78,
 		phy=wire,
 		role=dc];
 	leaf11	 [bgp_asn=65012,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="leaf11
-65012",
+65012
+10.0.255.12",
+		loopback="10.0.255.12",
 		pod=A,
+		rank=7,
 		style=filled];
 	"iface-0"	 [dev_type=port,
-		label=Eth];
-	leaf11 -- "iface-0"	 [color=coral,
+		ipv4="192.168.10.0/31",
+		label="Ethernet0
+192.168.10.0/31",
+		rank=8];
+	leaf11 -- "iface-0"	 [color=black,
 		phy=port];
-	leaf11 -- "iface-17"	 [color=coral,
+	leaf11 -- "iface-17"	 [color=black,
 		phy=port];
-	leaf11 -- "iface-25"	 [color=coral,
+	leaf11 -- "iface-25"	 [color=black,
 		phy=port];
-	leaf11 -- "iface-33"	 [color=coral,
+	leaf11 -- "iface-33"	 [color=black,
 		phy=port];
-	leaf11 -- "iface-41"	 [color=coral,
+	leaf11 -- "iface-41"	 [color=black,
 		phy=port];
 	"iface-1"	 [dev_type=port,
-		label=Eth];
-	"iface-0" -- "iface-1"	 [color=indigo,
+		ipv4="192.168.10.1/31",
+		label="eth0
+192.168.10.1/31",
+		rank=9];
+	"iface-0" -- "iface-1"	 [color=coral,
+		linux_bridge=hs_br_0,
 		phy=wire,
 		role=customer];
 	leaf12	 [bgp_asn=65013,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="leaf12
-65013",
+65013
+10.0.255.13",
+		loopback="10.0.255.13",
 		pod=A,
+		rank=7,
 		style=filled];
 	"iface-2"	 [dev_type=port,
-		label=Eth];
-	leaf12 -- "iface-2"	 [color=coral,
+		ipv4="192.168.10.2/31",
+		label="Ethernet0
+192.168.10.2/31",
+		rank=8];
+	leaf12 -- "iface-2"	 [color=black,
 		phy=port];
-	leaf12 -- "iface-19"	 [color=coral,
+	leaf12 -- "iface-19"	 [color=black,
 		phy=port];
-	leaf12 -- "iface-27"	 [color=coral,
+	leaf12 -- "iface-27"	 [color=black,
 		phy=port];
-	leaf12 -- "iface-35"	 [color=coral,
+	leaf12 -- "iface-35"	 [color=black,
 		phy=port];
-	leaf12 -- "iface-43"	 [color=coral,
+	leaf12 -- "iface-43"	 [color=black,
 		phy=port];
 	"iface-3"	 [dev_type=port,
-		label=Eth];
-	"iface-2" -- "iface-3"	 [color=indigo,
+		ipv4="192.168.10.3/31",
+		label="eth0
+192.168.10.3/31",
+		rank=9];
+	"iface-2" -- "iface-3"	 [color=coral,
+		linux_bridge=hs_br_2,
 		phy=wire,
 		role=customer];
 	leaf13	 [bgp_asn=65014,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="leaf13
-65014",
+65014
+10.0.255.14",
+		loopback="10.0.255.14",
 		pod=A,
+		rank=7,
 		style=filled];
 	"iface-4"	 [dev_type=port,
-		label=Eth];
-	leaf13 -- "iface-4"	 [color=coral,
+		ipv4="192.168.10.4/31",
+		label="Ethernet0
+192.168.10.4/31",
+		rank=8];
+	leaf13 -- "iface-4"	 [color=black,
 		phy=port];
-	leaf13 -- "iface-21"	 [color=coral,
+	leaf13 -- "iface-21"	 [color=black,
 		phy=port];
-	leaf13 -- "iface-29"	 [color=coral,
+	leaf13 -- "iface-29"	 [color=black,
 		phy=port];
-	leaf13 -- "iface-37"	 [color=coral,
+	leaf13 -- "iface-37"	 [color=black,
 		phy=port];
-	leaf13 -- "iface-45"	 [color=coral,
+	leaf13 -- "iface-45"	 [color=black,
 		phy=port];
 	"iface-5"	 [dev_type=port,
-		label=Eth];
-	"iface-4" -- "iface-5"	 [color=indigo,
+		ipv4="192.168.10.5/31",
+		label="eth0
+192.168.10.5/31",
+		rank=9];
+	"iface-4" -- "iface-5"	 [color=coral,
+		linux_bridge=hs_br_4,
 		phy=wire,
 		role=customer];
 	leaf14	 [bgp_asn=65015,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="leaf14
-65015",
+65015
+10.0.255.15",
+		loopback="10.0.255.15",
 		pod=A,
+		rank=7,
 		style=filled];
 	"iface-6"	 [dev_type=port,
-		label=Eth];
-	leaf14 -- "iface-6"	 [color=coral,
+		ipv4="192.168.10.6/31",
+		label="Ethernet0
+192.168.10.6/31",
+		rank=8];
+	leaf14 -- "iface-6"	 [color=black,
 		phy=port];
-	leaf14 -- "iface-23"	 [color=coral,
+	leaf14 -- "iface-23"	 [color=black,
 		phy=port];
-	leaf14 -- "iface-31"	 [color=coral,
+	leaf14 -- "iface-31"	 [color=black,
 		phy=port];
-	leaf14 -- "iface-39"	 [color=coral,
+	leaf14 -- "iface-39"	 [color=black,
 		phy=port];
-	leaf14 -- "iface-47"	 [color=coral,
+	leaf14 -- "iface-47"	 [color=black,
 		phy=port];
 	"iface-7"	 [dev_type=port,
-		label=Eth];
-	"iface-6" -- "iface-7"	 [color=indigo,
+		ipv4="192.168.10.7/31",
+		label="eth0
+192.168.10.7/31",
+		rank=9];
+	"iface-6" -- "iface-7"	 [color=coral,
+		linux_bridge=hs_br_6,
 		phy=wire,
 		role=customer];
 	leaf21	 [bgp_asn=65016,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="leaf21
-65016",
+65016
+10.0.255.16",
+		loopback="10.0.255.16",
 		pod=B,
+		rank=7,
 		style=filled];
 	"iface-8"	 [dev_type=port,
-		label=Eth];
-	leaf21 -- "iface-8"	 [color=coral,
+		ipv4="192.168.10.8/31",
+		label="Ethernet0
+192.168.10.8/31",
+		rank=8];
+	leaf21 -- "iface-8"	 [color=black,
 		phy=port];
-	leaf21 -- "iface-49"	 [color=coral,
+	leaf21 -- "iface-49"	 [color=black,
 		phy=port];
-	leaf21 -- "iface-57"	 [color=coral,
+	leaf21 -- "iface-57"	 [color=black,
 		phy=port];
-	leaf21 -- "iface-65"	 [color=coral,
+	leaf21 -- "iface-65"	 [color=black,
 		phy=port];
-	leaf21 -- "iface-73"	 [color=coral,
+	leaf21 -- "iface-73"	 [color=black,
 		phy=port];
 	"iface-9"	 [dev_type=port,
-		label=Eth];
-	"iface-8" -- "iface-9"	 [color=indigo,
+		ipv4="192.168.10.9/31",
+		label="eth0
+192.168.10.9/31",
+		rank=9];
+	"iface-8" -- "iface-9"	 [color=coral,
+		linux_bridge=hs_br_8,
 		phy=wire,
 		role=customer];
 	leaf22	 [bgp_asn=65017,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="leaf22
-65017",
+65017
+10.0.255.17",
+		loopback="10.0.255.17",
 		pod=B,
+		rank=7,
 		style=filled];
 	"iface-10"	 [dev_type=port,
-		label=Eth];
-	leaf22 -- "iface-10"	 [color=coral,
+		ipv4="192.168.10.10/31",
+		label="Ethernet0
+192.168.10.10/31",
+		rank=8];
+	leaf22 -- "iface-10"	 [color=black,
 		phy=port];
-	leaf22 -- "iface-51"	 [color=coral,
+	leaf22 -- "iface-51"	 [color=black,
 		phy=port];
-	leaf22 -- "iface-59"	 [color=coral,
+	leaf22 -- "iface-59"	 [color=black,
 		phy=port];
-	leaf22 -- "iface-67"	 [color=coral,
+	leaf22 -- "iface-67"	 [color=black,
 		phy=port];
-	leaf22 -- "iface-75"	 [color=coral,
+	leaf22 -- "iface-75"	 [color=black,
 		phy=port];
 	"iface-11"	 [dev_type=port,
-		label=Eth];
-	"iface-10" -- "iface-11"	 [color=indigo,
+		ipv4="192.168.10.11/31",
+		label="eth0
+192.168.10.11/31",
+		rank=9];
+	"iface-10" -- "iface-11"	 [color=coral,
+		linux_bridge=hs_br_10,
 		phy=wire,
 		role=customer];
 	leaf23	 [bgp_asn=65018,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="leaf23
-65018",
+65018
+10.0.255.18",
+		loopback="10.0.255.18",
 		pod=B,
+		rank=7,
 		style=filled];
 	"iface-12"	 [dev_type=port,
-		label=Eth];
-	leaf23 -- "iface-12"	 [color=coral,
+		ipv4="192.168.10.12/31",
+		label="Ethernet0
+192.168.10.12/31",
+		rank=8];
+	leaf23 -- "iface-12"	 [color=black,
 		phy=port];
-	leaf23 -- "iface-53"	 [color=coral,
+	leaf23 -- "iface-53"	 [color=black,
 		phy=port];
-	leaf23 -- "iface-61"	 [color=coral,
+	leaf23 -- "iface-61"	 [color=black,
 		phy=port];
-	leaf23 -- "iface-69"	 [color=coral,
+	leaf23 -- "iface-69"	 [color=black,
 		phy=port];
-	leaf23 -- "iface-77"	 [color=coral,
+	leaf23 -- "iface-77"	 [color=black,
 		phy=port];
 	"iface-13"	 [dev_type=port,
-		label=Eth];
-	"iface-12" -- "iface-13"	 [color=indigo,
+		ipv4="192.168.10.13/31",
+		label="eth0
+192.168.10.13/31",
+		rank=9];
+	"iface-12" -- "iface-13"	 [color=coral,
+		linux_bridge=hs_br_12,
 		phy=wire,
 		role=customer];
 	leaf24	 [bgp_asn=65019,
+		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="leaf24
-65019",
+65019
+10.0.255.19",
+		loopback="10.0.255.19",
 		pod=B,
+		rank=7,
 		style=filled];
 	"iface-14"	 [dev_type=port,
-		label=Eth];
-	leaf24 -- "iface-14"	 [color=coral,
+		ipv4="192.168.10.14/31",
+		label="Ethernet0
+192.168.10.14/31",
+		rank=8];
+	leaf24 -- "iface-14"	 [color=black,
 		phy=port];
-	leaf24 -- "iface-55"	 [color=coral,
+	leaf24 -- "iface-55"	 [color=black,
 		phy=port];
-	leaf24 -- "iface-63"	 [color=coral,
+	leaf24 -- "iface-63"	 [color=black,
 		phy=port];
-	leaf24 -- "iface-71"	 [color=coral,
+	leaf24 -- "iface-71"	 [color=black,
 		phy=port];
-	leaf24 -- "iface-79"	 [color=coral,
+	leaf24 -- "iface-79"	 [color=black,
 		phy=port];
 	"iface-15"	 [dev_type=port,
-		label=Eth];
-	"iface-14" -- "iface-15"	 [color=indigo,
+		ipv4="192.168.10.15/31",
+		label="eth0
+192.168.10.15/31",
+		rank=9];
+	"iface-14" -- "iface-15"	 [color=coral,
+		linux_bridge=hs_br_14,
 		phy=wire,
 		role=customer];
-	host1	 [dev_type=ubuntu,
-		fillcolor=red,
+	host1	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=deepskyblue,
 		pod=A,
+		rank=10,
 		style=filled];
-	host1 -- "iface-1"	 [color=coral,
+	host1 -- "iface-1"	 [color=black,
 		phy=port];
-	host2	 [dev_type=ubuntu,
-		fillcolor=red,
+	host2	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=deepskyblue,
 		pod=A,
+		rank=10,
 		style=filled];
-	host2 -- "iface-3"	 [color=coral,
+	host2 -- "iface-3"	 [color=black,
 		phy=port];
-	host3	 [dev_type=ubuntu,
-		fillcolor=red,
+	host3	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=deepskyblue,
 		pod=A,
+		rank=10,
 		style=filled];
-	host3 -- "iface-5"	 [color=coral,
+	host3 -- "iface-5"	 [color=black,
 		phy=port];
-	host4	 [dev_type=ubuntu,
-		fillcolor=red,
+	host4	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=deepskyblue,
 		pod=A,
+		rank=10,
 		style=filled];
-	host4 -- "iface-7"	 [color=coral,
+	host4 -- "iface-7"	 [color=black,
 		phy=port];
-	host5	 [dev_type=ubuntu,
-		fillcolor=lightgrey,
+	host5	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=red,
 		pod=B,
+		rank=10,
 		style=filled];
-	host5 -- "iface-9"	 [color=coral,
+	host5 -- "iface-9"	 [color=black,
 		phy=port];
-	host6	 [dev_type=ubuntu,
-		fillcolor=lightgrey,
+	host6	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=red,
 		pod=B,
+		rank=10,
 		style=filled];
-	host6 -- "iface-11"	 [color=coral,
+	host6 -- "iface-11"	 [color=black,
 		phy=port];
-	host7	 [dev_type=ubuntu,
-		fillcolor=lightgrey,
+	host7	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=red,
 		pod=B,
+		rank=10,
 		style=filled];
-	host7 -- "iface-13"	 [color=coral,
+	host7 -- "iface-13"	 [color=black,
 		phy=port];
-	host8	 [dev_type=ubuntu,
-		fillcolor=lightgrey,
+	host8	 [dev_role=hosts,
+		dev_type=ubuntu,
+		fillcolor=red,
 		pod=B,
+		rank=10,
 		style=filled];
-	host8 -- "iface-15"	 [color=coral,
+	host8 -- "iface-15"	 [color=black,
 		phy=port];
 }

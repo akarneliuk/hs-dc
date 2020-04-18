@@ -51,6 +51,12 @@ Release `0.2.1`:
 - Added the attribute `bgp_asn` to the node containing the switches. It is automaticaly calculated to be unique per each network device.
 - Interfaces are created as nodes. So now the grap view is changed. The full link between devices looks like as `dev_a -- port -- port -- dev_b`.
 
+Release `0.2.2`:
+- Added the IP addresses attribute to the nodes: `ipv4` for ports and `loopback` for switches.
+- Changed the colour for the `node-port` and `port-port` edges.
+- Added the rank to level the devices on the drawing, but that doesn't work as expected.
+- Added `netaddr` library to `requirements.txt` and to the code.
+
 ## Additional resources
 - NetworkX: https://networkx.github.io
 - Graphviz: http://graphviz.org
