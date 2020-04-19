@@ -39,7 +39,7 @@ if __name__ == '__main__':
             if dev_group in ['aggs', 'spines', 'leafs']:
                 DG.nodes[elem['name']]['bgp_asn'] = resources['bgp']['asn'] + dev_id
                 DG.nodes[elem['name']]['label'] = f'{elem["name"]}\n{resources["bgp"]["asn"] + dev_id}\n{ip_addr[dev_id]}'
-                DG.nodes[elem['name']]['loopback'] = ip_addr[dev_id]
+                DG.nodes[elem['name']]['loopback'] = str(ip_addr[dev_id])
 
                 dev_id += 1
 
