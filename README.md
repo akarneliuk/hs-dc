@@ -57,6 +57,9 @@ Release `0.2.2`:
 - Added the rank to level the devices on the drawing, but that doesn't work as expected.
 - Added `netaddr` library to `requirements.txt` and to the code.
 
+Release `0.2.3`:
+- The user-defined Python functions are moved to a separate file called `localfunctions.py` in the `bin` directory.
+
 ## Additional resources
 - NetworkX: https://networkx.github.io
 - Graphviz: http://graphviz.org
