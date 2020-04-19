@@ -23,7 +23,7 @@ if __name__ == '__main__':
     resources = yaml_dict(parh_resources)
 
     # Creating graph
-    DG = networkx.Graph(label='Data Centre', rankdir='TD')
+    DG = networkx.Graph(label='Data Centre')
 
     # Adding the devices to the graph
     dev_id = 0
