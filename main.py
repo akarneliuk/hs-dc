@@ -4,6 +4,7 @@
 from bin.localfunctions import *
 import networkx
 import netaddr
+import os
 
 
 # Variables
@@ -11,6 +12,7 @@ path_inventory = 'inventory/build.yaml'
 parh_resources = 'inventory/resources.yaml'
 path_output = 'topology/autogen.gv'
 path_primitives = 'primitives'
+path_infra = 'infrastructure'
 
 list_of_primitives = []
 if_count = {}
@@ -112,6 +114,23 @@ if __name__ == '__main__':
                if_id += 2
                if_count[ag["name"]] += 1
                if_count[sp["name"]] += 1
+
+    # Building the lab topology
+    for node_entry in DG.nodes.data():
+        if node_entry[1]['dev_type'] != 'port':
+            if not os.path.exists(f'{path_infra}/{node_entry[0]}'):
+                os.makedirs(f'{path_infra}/{node_entry[0]}')
+
+            if primitives[node_entry[1]['dev_type']]['templates']:
+                for temp_entry in primitives[node_entry[1]['dev_type']]['templates']:
+                    if not os.path.exists(f'{path_infra}/{node_entry[0]}/{temp_entry["destination"]}'):
+                        os.makedirs(f'{path_infra}/{node_entry[0]}/{temp_entry["destination"]}')
+
+                    if temp_entry['type'] == 'static':
+                        os.popen(f'cp primitives/templates/{node_entry[1]["dev_type"]}/{temp_entry["source"]} {path_infra}/{node_entry[0]}/{temp_entry["destination"]}/{temp_entry["source"]}')
+
+            for port_name in DG.adj[node_entry[0]]:
+                print(DG.nodes[port_name])
 
     # Visualising the graph
     VG = networkx.drawing.nx_agraph.to_agraph(DG)

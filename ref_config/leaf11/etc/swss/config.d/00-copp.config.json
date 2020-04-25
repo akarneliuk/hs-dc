@@ -1,0 +1,18 @@
+[
+    {
+        "COPP_TABLE:default": {
+            "trap_ids": "ip2me",
+            "trap_action": "trap",
+            "queue": "0"
+        },
+        "OP": "SET"
+    },
+    {
+        "COPP_TABLE:trap.group.arp.lacp": {
+            "trap_ids": "arp_req,arp_resp,neigh_discovery,lacp",
+            "trap_action":"trap",
+            "queue": "4"
+        },
+        "OP": "SET"
+    }
+]

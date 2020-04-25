@@ -2,4 +2,5 @@
 iface:
   name: eth
   start: 0
+templates:
 ...

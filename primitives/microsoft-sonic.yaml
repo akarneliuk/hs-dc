@@ -2,4 +2,23 @@
 iface:
   name: Ethernet
   start: 0
+templates:
+  - source: 00-copp.config.json
+    destination: etc/swss/config.d
+    type: static
+  - source: zebra.conf
+    destination: etc/quagga
+    type: static
+  - source: daemons
+    destination: etc/quagga
+    type: static
+  - source: bgpd.conf.j2
+    destination: etc/quagga
+    type: dynamic
+  - source: vlan_config.json.j2
+    destination: etc/config_db
+    type: dynamic
+  - source: startup.sh.j2
+    destination: scripts
+    type: dynamic
 ...
