@@ -129,8 +129,6 @@ if __name__ == '__main__':
             templating_data['hostname'] = node_entry[0]
             templating_data['general'] = node_entry[1]
 
-            if not os.path.exists(f'{path_infra}/{node_entry[0]}'):
-                os.makedirs(f'{path_infra}/{node_entry[0]}')
 
             # Creating list of the interfaces
             templating_data['interfaces'] = []
@@ -159,6 +157,10 @@ if __name__ == '__main__':
                                                 port_dict['bgp_asn'] = DG.nodes[nested_nested_abc[0]]['bgp_asn']
 
                 templating_data['interfaces'].append(port_dict)
+
+            # Templating the configuration files
+            if not os.path.exists(f'{path_infra}/{node_entry[0]}'):
+                os.makedirs(f'{path_infra}/{node_entry[0]}')
 
             if primitives[node_entry[1]['dev_type']]['templates']:
                 for temp_entry in primitives[node_entry[1]['dev_type']]['templates']:

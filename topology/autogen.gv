@@ -4,7 +4,7 @@ strict graph {
 	aggs1	 [bgp_asn=65000,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=cyan,
 		label="aggs1
 65000
 10.0.255.0",
@@ -224,7 +224,7 @@ strict graph {
 	aggs2	 [bgp_asn=65001,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=deepskyblue,
+		fillcolor=orangered,
 		label="aggs2
 65001
 10.0.255.1",
@@ -444,7 +444,7 @@ strict graph {
 	aggs3	 [bgp_asn=65002,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=cyan,
+		fillcolor=lightgrey,
 		label="aggs3
 65002
 10.0.255.2",
@@ -664,7 +664,7 @@ strict graph {
 	aggs4	 [bgp_asn=65003,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=gold,
 		label="aggs4
 65003
 10.0.255.3",
@@ -884,7 +884,7 @@ strict graph {
 	spine11	 [bgp_asn=65004,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="spine11
 65004
 10.0.255.4",
@@ -1008,7 +1008,7 @@ strict graph {
 	spine12	 [bgp_asn=65005,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="spine12
 65005
 10.0.255.5",
@@ -1132,7 +1132,7 @@ strict graph {
 	spine13	 [bgp_asn=65006,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="spine13
 65006
 10.0.255.6",
@@ -1256,7 +1256,7 @@ strict graph {
 	spine14	 [bgp_asn=65007,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="spine14
 65007
 10.0.255.7",
@@ -1380,7 +1380,7 @@ strict graph {
 	spine21	 [bgp_asn=65008,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="spine21
 65008
 10.0.255.8",
@@ -1504,7 +1504,7 @@ strict graph {
 	spine22	 [bgp_asn=65009,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="spine22
 65009
 10.0.255.9",
@@ -1628,7 +1628,7 @@ strict graph {
 	spine23	 [bgp_asn=65010,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="spine23
 65010
 10.0.255.10",
@@ -1752,7 +1752,7 @@ strict graph {
 	spine24	 [bgp_asn=65011,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="spine24
 65011
 10.0.255.11",
@@ -1876,7 +1876,7 @@ strict graph {
 	leaf11	 [bgp_asn=65012,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="leaf11
 65012
 10.0.255.12",
@@ -1917,7 +1917,7 @@ strict graph {
 	leaf12	 [bgp_asn=65013,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="leaf12
 65013
 10.0.255.13",
@@ -1958,7 +1958,7 @@ strict graph {
 	leaf13	 [bgp_asn=65014,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="leaf13
 65014
 10.0.255.14",
@@ -1999,7 +1999,7 @@ strict graph {
 	leaf14	 [bgp_asn=65015,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=red,
 		label="leaf14
 65015
 10.0.255.15",
@@ -2040,7 +2040,7 @@ strict graph {
 	leaf21	 [bgp_asn=65016,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="leaf21
 65016
 10.0.255.16",
@@ -2080,7 +2080,7 @@ strict graph {
 	leaf22	 [bgp_asn=65017,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="leaf22
 65017
 10.0.255.17",
@@ -2120,7 +2120,7 @@ strict graph {
 	leaf23	 [bgp_asn=65018,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="leaf23
 65018
 10.0.255.18",
@@ -2160,7 +2160,7 @@ strict graph {
 	leaf24	 [bgp_asn=65019,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=magenta,
 		label="leaf24
 65019
 10.0.255.19",
@@ -2199,7 +2199,7 @@ strict graph {
 		role=customer];
 	host1	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=red,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2207,7 +2207,7 @@ strict graph {
 		phy=port];
 	host2	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=red,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2215,7 +2215,7 @@ strict graph {
 		phy=port];
 	host3	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=red,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2223,7 +2223,7 @@ strict graph {
 		phy=port];
 	host4	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=red,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2231,7 +2231,7 @@ strict graph {
 		phy=port];
 	host5	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=coral,
+		fillcolor=magenta,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2239,7 +2239,7 @@ strict graph {
 		phy=port];
 	host6	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=coral,
+		fillcolor=magenta,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2247,7 +2247,7 @@ strict graph {
 		phy=port];
 	host7	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=coral,
+		fillcolor=magenta,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2255,7 +2255,7 @@ strict graph {
 		phy=port];
 	host8	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=coral,
+		fillcolor=magenta,
 		pod=B,
 		rank=10,
 		style=filled];
