@@ -26,6 +26,12 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.3.1`:
+- The package `jinja2` is added to allow the templating of the devices configuration.
+- The original content of the `infrastructure` directory is moved to `ref_config`, whereas the `infrastructure` is used for dynamically generated config.
+- Added logic to build extensive dictionary necessary to provision the network functions.
+- The configuration files for the `microsoft-sonic` nodes are generated automatically.
+
 Release `0.3.0`:
 - Primitives contain new parameter `templates`, which stores the necessary templates or fixed files for device launch.
 - Added functionality to create necessary folders per the template from primitives
@@ -68,6 +74,7 @@ Relesase `0.1.1`:
 ## Additional resources
 - NetworkX: https://networkx.github.io
 - Graphviz: http://graphviz.org
+- jinja2: https://jinja.palletsprojects.com/
 
 # Do you want to automate network like a profi?
 Join the network automation course: http://training.karneliuk.com
