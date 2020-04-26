@@ -4,7 +4,7 @@ strict graph {
 	aggs1	 [bgp_asn=65000,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=cyan,
+		fillcolor=lightgrey,
 		label="aggs1
 65000
 10.0.255.0",
@@ -224,7 +224,7 @@ strict graph {
 	aggs2	 [bgp_asn=65001,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=deepskyblue,
 		label="aggs2
 65001
 10.0.255.1",
@@ -444,7 +444,7 @@ strict graph {
 	aggs3	 [bgp_asn=65002,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=orangered,
+		fillcolor=cyan,
 		label="aggs3
 65002
 10.0.255.2",
@@ -664,7 +664,7 @@ strict graph {
 	aggs4	 [bgp_asn=65003,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=deepskyblue,
+		fillcolor=red,
 		label="aggs4
 65003
 10.0.255.3",
@@ -884,7 +884,7 @@ strict graph {
 	spine11	 [bgp_asn=65004,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="spine11
 65004
 10.0.255.4",
@@ -1008,7 +1008,7 @@ strict graph {
 	spine12	 [bgp_asn=65005,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="spine12
 65005
 10.0.255.5",
@@ -1132,7 +1132,7 @@ strict graph {
 	spine13	 [bgp_asn=65006,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="spine13
 65006
 10.0.255.6",
@@ -1256,7 +1256,7 @@ strict graph {
 	spine14	 [bgp_asn=65007,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="spine14
 65007
 10.0.255.7",
@@ -1876,7 +1876,7 @@ strict graph {
 	leaf11	 [bgp_asn=65012,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="leaf11
 65012
 10.0.255.12",
@@ -1903,7 +1903,8 @@ strict graph {
 		phy=port];
 	leaf11 -- "iface-41"	 [color=black,
 		phy=port];
-	"iface-1"	 [dev_name=eth0,
+	"iface-1"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.1/31",
 		label="eth0
@@ -1916,7 +1917,7 @@ strict graph {
 	leaf12	 [bgp_asn=65013,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="leaf12
 65013
 10.0.255.13",
@@ -1943,7 +1944,8 @@ strict graph {
 		phy=port];
 	leaf12 -- "iface-43"	 [color=black,
 		phy=port];
-	"iface-3"	 [dev_name=eth0,
+	"iface-3"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.3/31",
 		label="eth0
@@ -1956,7 +1958,7 @@ strict graph {
 	leaf13	 [bgp_asn=65014,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="leaf13
 65014
 10.0.255.14",
@@ -1983,7 +1985,8 @@ strict graph {
 		phy=port];
 	leaf13 -- "iface-45"	 [color=black,
 		phy=port];
-	"iface-5"	 [dev_name=eth0,
+	"iface-5"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.5/31",
 		label="eth0
@@ -1996,7 +1999,7 @@ strict graph {
 	leaf14	 [bgp_asn=65015,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="leaf14
 65015
 10.0.255.15",
@@ -2023,7 +2026,8 @@ strict graph {
 		phy=port];
 	leaf14 -- "iface-47"	 [color=black,
 		phy=port];
-	"iface-7"	 [dev_name=eth0,
+	"iface-7"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.7/31",
 		label="eth0
@@ -2062,7 +2066,8 @@ strict graph {
 		phy=port];
 	leaf21 -- "iface-73"	 [color=black,
 		phy=port];
-	"iface-9"	 [dev_name=eth0,
+	"iface-9"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.9/31",
 		label="eth0
@@ -2101,7 +2106,8 @@ strict graph {
 		phy=port];
 	leaf22 -- "iface-75"	 [color=black,
 		phy=port];
-	"iface-11"	 [dev_name=eth0,
+	"iface-11"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.11/31",
 		label="eth0
@@ -2140,7 +2146,8 @@ strict graph {
 		phy=port];
 	leaf23 -- "iface-77"	 [color=black,
 		phy=port];
-	"iface-13"	 [dev_name=eth0,
+	"iface-13"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.13/31",
 		label="eth0
@@ -2179,7 +2186,8 @@ strict graph {
 		phy=port];
 	leaf24 -- "iface-79"	 [color=black,
 		phy=port];
-	"iface-15"	 [dev_name=eth0,
+	"iface-15"	 [customer=True,
+		dev_name=eth0,
 		dev_type=port,
 		ipv4="192.168.10.15/31",
 		label="eth0
@@ -2191,7 +2199,7 @@ strict graph {
 		role=customer];
 	host1	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=gold,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2199,7 +2207,7 @@ strict graph {
 		phy=port];
 	host2	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=gold,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2207,7 +2215,7 @@ strict graph {
 		phy=port];
 	host3	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=gold,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2215,7 +2223,7 @@ strict graph {
 		phy=port];
 	host4	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=gold,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];

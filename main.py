@@ -141,22 +141,22 @@ if __name__ == '__main__':
                     port_id = 10 + int(re.sub(f'{primitives[node_entry[1]["dev_type"]]["iface"]["name"]}','', port_dict['label'].split('\n')[0]))
                     port_dict['vlan'] = port_id
 
-                    for connected_item in DG.adj[port_entry]:
-                        for abc in DG.adj[connected_item].items():
-                            if abc[1]['phy'] == 'wire':
-                                if abc[1]['role'] == 'customer':
-                                    port_dict['customer'] = True
+                for connected_item in DG.adj[port_entry]:
+                    for abc in DG.adj[connected_item].items():
+                        if abc[1]['phy'] == 'wire':
+                            if abc[1]['role'] == 'customer':
+                                port_dict['customer'] = True
 
-                                elif abc[1]['role'] == 'dc':
-                                    port_dict['customer'] = False
+                            elif abc[1]['role'] == 'dc':
+                                port_dict['customer'] = False
 
-                                    for nested_abc in DG.adj[abc[0]].items():
-                                        if nested_abc[1]['phy'] == 'wire':
-                                            port_dict['bgp_peer'] = DG.nodes[nested_abc[0]]['ipv4'].split('/')[0]
+                                for nested_abc in DG.adj[abc[0]].items():
+                                    if nested_abc[1]['phy'] == 'wire':
+                                        port_dict['bgp_peer'] = DG.nodes[nested_abc[0]]['ipv4'].split('/')[0]
 
-                                            for nested_nested_abc in DG.adj[nested_abc[0]].items():
-                                                if nested_nested_abc[1]['phy'] == 'port':
-                                                    port_dict['bgp_asn'] = DG.nodes[nested_nested_abc[0]]['bgp_asn']
+                                        for nested_nested_abc in DG.adj[nested_abc[0]].items():
+                                            if nested_nested_abc[1]['phy'] == 'port':
+                                                port_dict['bgp_asn'] = DG.nodes[nested_nested_abc[0]]['bgp_asn']
 
                 templating_data['interfaces'].append(port_dict)
 
