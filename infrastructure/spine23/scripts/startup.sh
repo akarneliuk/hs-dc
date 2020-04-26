@@ -1,6 +1,6 @@
 [ -d /etc/sonic ] || mkdir -p /etc/sonic
 
-SYSTEM_MAC_ADDRESS=00:dc:5e:01:01:a
+SYSTEM_MAC_ADDRESS=00:dc:5e:01:01:0a
 ip link add eth0 addr $SYSTEM_MAC_ADDRESS type dummy
 
 if [ -f /etc/sonic/config_db.json ]; then

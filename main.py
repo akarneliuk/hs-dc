@@ -44,10 +44,10 @@ if __name__ == '__main__':
                 DG.nodes[elem['name']]['bgp_asn'] = resources['bgp']['asn'] + dev_id
                 DG.nodes[elem['name']]['label'] = f'{elem["name"]}\n{resources["bgp"]["asn"] + dev_id}\n{ip_addr[dev_id]}'
                 DG.nodes[elem['name']]['loopback'] = str(ip_addr[dev_id])
-                if (len(format(dev_id, 'x'))) < 1:
+                if (len(format(dev_id, 'x'))) < 2:
                     DG.nodes[elem['name']]['mac'] = f'00:dc:5e:01:01:0{format(dev_id, "x")}'
 
-                elif (len(format(dev_id, 'x'))) < 2:
+                elif (len(format(dev_id, 'x'))) < 3:
                     DG.nodes[elem['name']]['mac'] = f'00:dc:5e:01:01:{format(dev_id, "x")}'
 
                 dev_id += 1

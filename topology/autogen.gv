@@ -4,12 +4,12 @@ strict graph {
 	aggs1	 [bgp_asn=65000,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=cyan,
+		fillcolor=red,
 		label="aggs1
 65000
 10.0.255.0",
 		loopback="10.0.255.0",
-		mac="00:dc:5e:01:01:0",
+		mac="00:dc:5e:01:01:00",
 		pod=None,
 		rank=1,
 		style=filled];
@@ -224,12 +224,12 @@ strict graph {
 	aggs2	 [bgp_asn=65001,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=deepskyblue,
+		fillcolor=coral,
 		label="aggs2
 65001
 10.0.255.1",
 		loopback="10.0.255.1",
-		mac="00:dc:5e:01:01:1",
+		mac="00:dc:5e:01:01:01",
 		pod=None,
 		rank=1,
 		style=filled];
@@ -444,12 +444,12 @@ strict graph {
 	aggs3	 [bgp_asn=65002,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=cyan,
 		label="aggs3
 65002
 10.0.255.2",
 		loopback="10.0.255.2",
-		mac="00:dc:5e:01:01:2",
+		mac="00:dc:5e:01:01:02",
 		pod=None,
 		rank=1,
 		style=filled];
@@ -664,12 +664,12 @@ strict graph {
 	aggs4	 [bgp_asn=65003,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=deepskyblue,
 		label="aggs4
 65003
 10.0.255.3",
 		loopback="10.0.255.3",
-		mac="00:dc:5e:01:01:3",
+		mac="00:dc:5e:01:01:03",
 		pod=None,
 		rank=1,
 		style=filled];
@@ -884,12 +884,12 @@ strict graph {
 	spine11	 [bgp_asn=65004,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="spine11
 65004
 10.0.255.4",
 		loopback="10.0.255.4",
-		mac="00:dc:5e:01:01:4",
+		mac="00:dc:5e:01:01:04",
 		pod=A,
 		rank=4,
 		style=filled];
@@ -1008,12 +1008,12 @@ strict graph {
 	spine12	 [bgp_asn=65005,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="spine12
 65005
 10.0.255.5",
 		loopback="10.0.255.5",
-		mac="00:dc:5e:01:01:5",
+		mac="00:dc:5e:01:01:05",
 		pod=A,
 		rank=4,
 		style=filled];
@@ -1132,12 +1132,12 @@ strict graph {
 	spine13	 [bgp_asn=65006,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="spine13
 65006
 10.0.255.6",
 		loopback="10.0.255.6",
-		mac="00:dc:5e:01:01:6",
+		mac="00:dc:5e:01:01:06",
 		pod=A,
 		rank=4,
 		style=filled];
@@ -1256,12 +1256,12 @@ strict graph {
 	spine14	 [bgp_asn=65007,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="spine14
 65007
 10.0.255.7",
 		loopback="10.0.255.7",
-		mac="00:dc:5e:01:01:7",
+		mac="00:dc:5e:01:01:07",
 		pod=A,
 		rank=4,
 		style=filled];
@@ -1385,7 +1385,7 @@ strict graph {
 65008
 10.0.255.8",
 		loopback="10.0.255.8",
-		mac="00:dc:5e:01:01:8",
+		mac="00:dc:5e:01:01:08",
 		pod=B,
 		rank=4,
 		style=filled];
@@ -1509,7 +1509,7 @@ strict graph {
 65009
 10.0.255.9",
 		loopback="10.0.255.9",
-		mac="00:dc:5e:01:01:9",
+		mac="00:dc:5e:01:01:09",
 		pod=B,
 		rank=4,
 		style=filled];
@@ -1633,7 +1633,7 @@ strict graph {
 65010
 10.0.255.10",
 		loopback="10.0.255.10",
-		mac="00:dc:5e:01:01:a",
+		mac="00:dc:5e:01:01:0a",
 		pod=B,
 		rank=4,
 		style=filled];
@@ -1757,7 +1757,7 @@ strict graph {
 65011
 10.0.255.11",
 		loopback="10.0.255.11",
-		mac="00:dc:5e:01:01:b",
+		mac="00:dc:5e:01:01:0b",
 		pod=B,
 		rank=4,
 		style=filled];
@@ -1876,12 +1876,12 @@ strict graph {
 	leaf11	 [bgp_asn=65012,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="leaf11
 65012
 10.0.255.12",
 		loopback="10.0.255.12",
-		mac="00:dc:5e:01:01:c",
+		mac="00:dc:5e:01:01:0c",
 		pod=A,
 		rank=7,
 		style=filled];
@@ -1917,12 +1917,12 @@ strict graph {
 	leaf12	 [bgp_asn=65013,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="leaf12
 65013
 10.0.255.13",
 		loopback="10.0.255.13",
-		mac="00:dc:5e:01:01:d",
+		mac="00:dc:5e:01:01:0d",
 		pod=A,
 		rank=7,
 		style=filled];
@@ -1958,12 +1958,12 @@ strict graph {
 	leaf13	 [bgp_asn=65014,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="leaf13
 65014
 10.0.255.14",
 		loopback="10.0.255.14",
-		mac="00:dc:5e:01:01:e",
+		mac="00:dc:5e:01:01:0e",
 		pod=A,
 		rank=7,
 		style=filled];
@@ -1999,12 +1999,12 @@ strict graph {
 	leaf14	 [bgp_asn=65015,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=magenta,
 		label="leaf14
 65015
 10.0.255.15",
 		loopback="10.0.255.15",
-		mac="00:dc:5e:01:01:f",
+		mac="00:dc:5e:01:01:0f",
 		pod=A,
 		rank=7,
 		style=filled];
@@ -2045,6 +2045,7 @@ strict graph {
 65016
 10.0.255.16",
 		loopback="10.0.255.16",
+		mac="00:dc:5e:01:01:10",
 		pod=B,
 		rank=7,
 		style=filled];
@@ -2085,6 +2086,7 @@ strict graph {
 65017
 10.0.255.17",
 		loopback="10.0.255.17",
+		mac="00:dc:5e:01:01:11",
 		pod=B,
 		rank=7,
 		style=filled];
@@ -2125,6 +2127,7 @@ strict graph {
 65018
 10.0.255.18",
 		loopback="10.0.255.18",
+		mac="00:dc:5e:01:01:12",
 		pod=B,
 		rank=7,
 		style=filled];
@@ -2165,6 +2168,7 @@ strict graph {
 65019
 10.0.255.19",
 		loopback="10.0.255.19",
+		mac="00:dc:5e:01:01:13",
 		pod=B,
 		rank=7,
 		style=filled];
@@ -2199,7 +2203,7 @@ strict graph {
 		role=customer];
 	host1	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=red,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2207,7 +2211,7 @@ strict graph {
 		phy=port];
 	host2	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=red,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2215,7 +2219,7 @@ strict graph {
 		phy=port];
 	host3	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=red,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2223,7 +2227,7 @@ strict graph {
 		phy=port];
 	host4	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=red,
+		fillcolor=magenta,
 		pod=A,
 		rank=10,
 		style=filled];
