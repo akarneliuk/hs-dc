@@ -8,7 +8,7 @@ router bgp {{ temp_data.general.bgp_asn }}
   bgp bestpath as-path multipath-relax
 {%- for iface_entry in temp_data.interfaces %}
 {%- if iface_entry.customer is defined and iface_entry.customer %}
-  network {{ iface_entry.ipv4.split('/')[0] }} mask 255.255.255.254
+  network {{ iface_entry.ipv4 }}
 {%- endif %}
 {%- endfor %}
 {%- for iface_entry in temp_data.interfaces %}

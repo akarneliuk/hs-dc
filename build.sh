@@ -5,10 +5,10 @@ sudo systemctl start docker.service
 echo "Launching Docker: done"
 
 echo "Creating the containers: starting"
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name leaf11 -it -d -v $PWD/infrastructure/leaf11:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name leaf12 -it -d -v $PWD/infrastructure/leaf12:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name spine11 -it -d -v $PWD/infrastructure/spine11:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name spine12 -it -d -v $PWD/infrastructure/spine12:/sonic docker-sonic-p4:latest
+sudo docker run --net=none --privileged --entrypoint /bin/bash --name leaf11 -it -d -v $PWD/ref_config/leaf11:/sonic docker-sonic-p4:latest
+sudo docker run --net=none --privileged --entrypoint /bin/bash --name leaf12 -it -d -v $PWD/ref_config/leaf12:/sonic docker-sonic-p4:latest
+sudo docker run --net=none --privileged --entrypoint /bin/bash --name spine11 -it -d -v $PWD/ref_config/spine11:/sonic docker-sonic-p4:latest
+sudo docker run --net=none --privileged --entrypoint /bin/bash --name spine12 -it -d -v $PWD/ref_config/spine12:/sonic docker-sonic-p4:latest
 sudo docker run --net=none --privileged --entrypoint /bin/bash --name host11 -it -d ubuntu:14.04 
 sudo docker run --net=none --privileged --entrypoint /bin/bash --name host12 -it -d ubuntu:14.04
 

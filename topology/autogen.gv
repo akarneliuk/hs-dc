@@ -224,7 +224,7 @@ strict graph {
 	aggs2	 [bgp_asn=65001,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=orangered,
+		fillcolor=deepskyblue,
 		label="aggs2
 65001
 10.0.255.1",
@@ -664,7 +664,7 @@ strict graph {
 	aggs4	 [bgp_asn=65003,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=gold,
+		fillcolor=magenta,
 		label="aggs4
 65003
 10.0.255.3",
@@ -1380,7 +1380,7 @@ strict graph {
 	spine21	 [bgp_asn=65008,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine21
 65008
 10.0.255.8",
@@ -1504,7 +1504,7 @@ strict graph {
 	spine22	 [bgp_asn=65009,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine22
 65009
 10.0.255.9",
@@ -1628,7 +1628,7 @@ strict graph {
 	spine23	 [bgp_asn=65010,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine23
 65010
 10.0.255.10",
@@ -1752,7 +1752,7 @@ strict graph {
 	spine24	 [bgp_asn=65011,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine24
 65011
 10.0.255.11",
@@ -2040,7 +2040,7 @@ strict graph {
 	leaf21	 [bgp_asn=65016,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf21
 65016
 10.0.255.16",
@@ -2080,7 +2080,7 @@ strict graph {
 	leaf22	 [bgp_asn=65017,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf22
 65017
 10.0.255.17",
@@ -2120,7 +2120,7 @@ strict graph {
 	leaf23	 [bgp_asn=65018,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf23
 65018
 10.0.255.18",
@@ -2160,7 +2160,7 @@ strict graph {
 	leaf24	 [bgp_asn=65019,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf24
 65019
 10.0.255.19",
@@ -2231,7 +2231,7 @@ strict graph {
 		phy=port];
 	host5	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=gold,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2239,7 +2239,7 @@ strict graph {
 		phy=port];
 	host6	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=gold,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2247,7 +2247,7 @@ strict graph {
 		phy=port];
 	host7	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=gold,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2255,7 +2255,7 @@ strict graph {
 		phy=port];
 	host8	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
+		fillcolor=gold,
 		pod=B,
 		rank=10,
 		style=filled];

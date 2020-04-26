@@ -1,0 +1,58 @@
+ {
+    "VLAN": {
+        "Vlan10": {
+            "members": [
+                "Ethernet0"
+            ],
+            "vlanid": "10"
+        },
+        "Vlan11": {
+            "members": [
+                "Ethernet1"
+            ],
+            "vlanid": "11"
+        },
+        "Vlan12": {
+            "members": [
+                "Ethernet2"
+            ],
+            "vlanid": "12"
+        },
+        "Vlan13": {
+            "members": [
+                "Ethernet3"
+            ],
+            "vlanid": "13"
+        },
+        "Vlan14": {
+            "members": [
+                "Ethernet4"
+            ],
+            "vlanid": "14"
+        }
+    },
+    "VLAN_MEMBER": {
+        "Vlan10|Ethernet0": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan11|Ethernet1": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan12|Ethernet2": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan13|Ethernet3": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan14|Ethernet4": {
+            "tagging_mode": "untagged"
+        }
+    },
+    "VLAN_INTERFACE": {
+        "Vlan10|192.168.10.0/31": {},
+        "Vlan11|10.0.0.17/31": {},
+        "Vlan12|10.0.0.25/31": {},
+        "Vlan13|10.0.0.33/31": {},
+        "Vlan14|10.0.0.41/31": {}
+    }
+}

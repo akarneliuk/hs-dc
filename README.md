@@ -26,6 +26,10 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.3.2`:
+- Added flexible subnet mask for the customer's prefix
+- Minor bug fixing
+
 Release `0.3.1`:
 - The package `jinja2` is added to allow the templating of the devices configuration.
 - The original content of the `infrastructure` directory is moved to `ref_config`, whereas the `infrastructure` is used for dynamically generated config.

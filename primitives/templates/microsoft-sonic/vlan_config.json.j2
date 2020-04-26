@@ -21,7 +21,7 @@
     "VLAN_INTERFACE": {
 {%- for iface_entry in temp_data.interfaces %}
 {%- if loop.index0 > 0 %},{% endif %}
-        "Vlan130{{ iface_entry.vlan }}|{{ iface_entry.ipv4 }}": {}
+        "Vlan{{ iface_entry.vlan }}|{{ iface_entry.ipv4 }}": {}
 {%- endfor %}
     }
 }
