@@ -26,6 +26,11 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.4.0`:
+- Added the Docker part including creation and management of the Docker containers using Python.
+- The `requirements.txt` is modified to add the `docker` library.
+- The topology is launched, containers are working fine, likewise the linux bridges. However, the multi-namespace topology inside the P4 switch causes issue (packets are received (host -> bridge -> switch/ns:sw_net -> switch), but not replied)
+
 Release `0.3.2`:
 - Added flexible subnet mask for the customer's prefix
 - Minor bug fixing
@@ -79,6 +84,7 @@ Relesase `0.1.1`:
 - NetworkX: https://networkx.github.io
 - Graphviz: http://graphviz.org
 - jinja2: https://jinja.palletsprojects.com/
+- Docker: https://docker-py.readthedocs.io/
 
 # Do you want to automate network like a profi?
 Join the network automation course: http://training.karneliuk.com

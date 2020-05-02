@@ -2,5 +2,8 @@
 iface:
   name: eth
   start: 0
+image:
+  type: docker
+  name: ubuntu:14.04
 templates:
 ...

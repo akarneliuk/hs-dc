@@ -5,12 +5,12 @@ sudo systemctl start docker.service
 echo "Launching Docker: done"
 
 echo "Creating the containers: starting"
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name leaf11 -it -d -v $PWD/ref_config/leaf11:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name leaf12 -it -d -v $PWD/ref_config/leaf12:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name spine11 -it -d -v $PWD/ref_config/spine11:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name spine12 -it -d -v $PWD/ref_config/spine12:/sonic docker-sonic-p4:latest
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name host11 -it -d ubuntu:14.04
-sudo docker run --net=none --privileged --entrypoint /bin/bash --name host12 -it -d ubuntu:14.04
+docker run --net=none --privileged --entrypoint /bin/bash --name leaf11 -it -d -v $PWD/ref_config/leaf11:/sonic docker-sonic-p4:latest
+docker run --net=none --privileged --entrypoint /bin/bash --name leaf12 -it -d -v $PWD/ref_config/leaf12:/sonic docker-sonic-p4:latest
+docker run --net=none --privileged --entrypoint /bin/bash --name spine11 -it -d -v $PWD/ref_config/spine11:/sonic docker-sonic-p4:latest
+docker run --net=none --privileged --entrypoint /bin/bash --name spine12 -it -d -v $PWD/ref_config/spine12:/sonic docker-sonic-p4:latest
+docker run --net=none --privileged --entrypoint /bin/bash --name host11 -it -d ubuntu:14.04
+docker run --net=none --privileged --entrypoint /bin/bash --name host12 -it -d ubuntu:14.04
 
 LEAF11=$(sudo docker inspect --format '{{ .State.Pid }}' leaf11)
 LEAF12=$(sudo docker inspect --format '{{ .State.Pid }}' leaf12)
@@ -71,10 +71,10 @@ sudo ip link add sw_port0 type veth
 sudo ip link set veth8 up
 sudo brctl addif host11_leaf11 veth8
 sudo ip link set netns ${LEAF11} dev sw_port0
-sudo ip link add eth1 type veth
+sudo ip link add eth0 type veth
 sudo ip link set veth9 up
 sudo brctl addif host11_leaf11 veth9
-sudo ip link set netns ${HOST11} dev eth1
+sudo ip link set netns ${HOST11} dev eth0
 
 sudo brctl addbr host12_leaf12
 sudo ip link set host12_leaf12 up
@@ -82,21 +82,19 @@ sudo ip link add sw_port0 type veth
 sudo ip link set veth10 up
 sudo brctl addif host12_leaf12 veth10
 sudo ip link set netns ${LEAF12} dev sw_port0
-sudo ip link add eth1 type veth
+sudo ip link add eth0 type veth
 sudo ip link set veth11 up
 sudo brctl addif host12_leaf12 veth11
-sudo ip link set netns ${HOST12} eth1
+sudo ip link set netns ${HOST12} eth0
 echo "Creating the network connectivity: done"
 
 echo "Configuring hosts: starting"
-sudo docker exec -d host11 sysctl net.ipv6.conf.eth0.disable_ipv6=1
-sudo docker exec -d host11 sysctl net.ipv6.conf.eth1.disable_ipv6=1
-sudo docker exec -d host12 sysctl net.ipv6.conf.eth0.disable_ipv6=1
-sudo docker exec -d host12 sysctl net.ipv6.conf.eth1.disable_ipv6=1
+docker exec -d host11 sysctl net.ipv6.conf.eth0.disable_ipv6=1
+docker exec -d host12 sysctl net.ipv6.conf.eth0.disable_ipv6=1
 
-sudo docker exec -d host11 ifconfig eth1 192.168.1.2/24 mtu 1400
+sudo docker exec -d host11 ifconfig eth0 192.168.1.2/24 mtu 1400
 sudo docker exec -d host11 ip route replace default via 192.168.1.1
-sudo docker exec -d host12 ifconfig eth1 192.168.2.2/24 mtu 1400
+sudo docker exec -d host12 ifconfig eth0 192.168.2.2/24 mtu 1400
 sudo docker exec -d host12 ip route replace default via 192.168.2.1
 echo "Configuring hosts: done"
 

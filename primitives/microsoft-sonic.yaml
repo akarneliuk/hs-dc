@@ -2,6 +2,9 @@
 iface:
   name: Ethernet
   start: 0
+image:
+  type: docker
+  name: docker-sonic-p4
 templates:
   - source: 00-copp.config.json
     destination: etc/swss/config.d

@@ -10,6 +10,7 @@ else
     sonic-cfggen -j /sonic/etc/config_db/vlan_config.json --print-data > /etc/sonic/config_db.json
 fi
 
+#chmod +x /usr/bin/config_bm.sh # TODO: remove this line
 cp -f /sonic/etc/swss/config.d/00-copp.config.json /etc/swss/config.d/default_config.json
 cp -rf /sonic/etc/quagga /etc/
 {%- for iface_entry in temp_data.interfaces %}
