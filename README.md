@@ -26,6 +26,11 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.4.2`:
+- Original Bash scripts are moved to `ref_config` folder.
+- The debug print statements are removed from the `main.py`.
+- Installation of the Docker is added to `prepare.sh`.
+
 Release `0.4.1`:
 - Major bug fixing: unique VLANs per SONiC P4 switch are added, now the hosts can communicate to each other without issues
 

@@ -52,7 +52,7 @@ if __name__ == '__main__':
                     DG.nodes[elem['name']]['mac'] = f'00:dc:5e:01:01:{format(dev_id, "x")}'
 
                 if DG.nodes[elem['name']]['dev_type'] == 'microsoft-sonic':
-                    DG.nodes[elem['name']]['vlan_base'] = (1 + dev_id) * 10
+                    DG.nodes[elem['name']]['vlan_base'] = dev_id*10
 
                 dev_id += 1
 
@@ -229,45 +229,31 @@ if __name__ == '__main__':
                     if link_data[1]['phy'] != 'port':
                         os.system(f'sudo brctl addbr {link_data[1]["linux_bridge"]}')
                         os.system(f'sudo ip link set {link_data[1]["linux_bridge"]} up')
-                        print(f'sudo brctl addbr {link_data[1]["linux_bridge"]}')
-                        print(f'sudo ip link set {link_data[1]["linux_bridge"]} up')
 
                         if node_entry[1]['dev_type'] == 'microsoft-sonic':
                             os.system(f'sudo ip link add sw_port{DG.nodes[iface_id]["vlan"] - 10} type veth')
-                            print(f'sudo ip link add sw_port{DG.nodes[iface_id]["vlan"] - 10} type veth')
 
                         else:
                             os.system(f'sudo ip link add {DG.nodes[iface_id]["dev_name"]} type veth')
-                            print(f'sudo ip link add {DG.nodes[iface_id]["dev_name"]} type veth')
 
                         os.system(f'sudo ip link set veth{veth_id} up')
                         os.system(f'sudo brctl addif {link_data[1]["linux_bridge"]} veth{veth_id}')
-                        print(f'sudo ip link set veth{veth_id} up')
-                        print(f'sudo brctl addif {link_data[1]["linux_bridge"]} veth{veth_id}')
 
                         if node_entry[1]['dev_type'] == 'microsoft-sonic':
                             os.system(f'sudo ip link set netns {DG.nodes[node_entry[0]]["pid"]} dev sw_port{DG.nodes[iface_id]["vlan"] - 10}')
-                            print(f'sudo ip link set netns {DG.nodes[node_entry[0]]["pid"]} dev sw_port{DG.nodes[iface_id]["vlan"] - 10}')
 
                         else:
                             os.system(f'sudo ip link set netns {DG.nodes[node_entry[0]]["pid"]} dev {DG.nodes[iface_id]["dev_name"]}')
-                            print(f'sudo ip link set netns {DG.nodes[node_entry[0]]["pid"]} dev {DG.nodes[iface_id]["dev_name"]}')
 
                         if node_entry[1]['dev_type'] == 'microsoft-sonic':
                             container_node.exec_run(f'ip link set dev sw_port{DG.nodes[iface_id]["vlan"] - 10} netns sw_net', detach=True)
                             container_node.exec_run(f'ip netns exec sw_net sysctl net.ipv6.conf.sw_port{DG.nodes[iface_id]["vlan"] - 10}.disable_ipv6=1', detach=True)
                             container_node.exec_run(f'ip netns exec sw_net ip link set sw_port{DG.nodes[iface_id]["vlan"] - 10} up', detach=True)
-                            print(f'ip link set dev sw_port{DG.nodes[iface_id]["vlan"] - 10} netns sw_net')
-                            print(f'ip netns exec sw_net sysctl net.ipv6.conf.sw_port{DG.nodes[iface_id]["vlan"] - 10}.disable_ipv6=1')
-                            print(f'ip netns exec sw_net ip link set sw_port{DG.nodes[iface_id]["vlan"] - 10} up')
 
                         elif node_entry[1]['dev_type'] == 'ubuntu' and node_entry[1]['dev_role'] == 'hosts':
                             container_node.exec_run(f'sysctl net.ipv6.conf.{DG.nodes[iface_id]["dev_name"]}.disable_ipv6=1', detach=True)
                             container_node.exec_run(f'ifconfig {DG.nodes[iface_id]["dev_name"]} {DG.nodes[iface_id]["ipv4"]} mtu 1400', detach=True)
                             container_node.exec_run(f'ip route replace default via {DG.nodes[link_data[0]]["ipv4"].split("/")[0]}', detach=True)
-                            print(f'sysctl net.ipv6.conf.{DG.nodes[iface_id]["dev_name"]}.disable_ipv6=1')
-                            print(f'ifconfig {DG.nodes[iface_id]["dev_name"]} {DG.nodes[iface_id]["ipv4"]} mtu 1400')
-                            print(f'ip route replace default via {DG.nodes[link_data[0]]["ipv4"].split("/")[0]}')
 
                         veth_id += 1
 
