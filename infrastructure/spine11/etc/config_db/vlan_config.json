@@ -1,88 +1,88 @@
  {
     "VLAN": {
-        "Vlan10": {
+        "Vlan50": {
             "members": [
                 "Ethernet0"
             ],
-            "vlanid": "10"
+            "vlanid": "50"
         },
-        "Vlan11": {
+        "Vlan51": {
             "members": [
                 "Ethernet1"
             ],
-            "vlanid": "11"
+            "vlanid": "51"
         },
-        "Vlan12": {
+        "Vlan52": {
             "members": [
                 "Ethernet2"
             ],
-            "vlanid": "12"
+            "vlanid": "52"
         },
-        "Vlan13": {
+        "Vlan53": {
             "members": [
                 "Ethernet3"
             ],
-            "vlanid": "13"
+            "vlanid": "53"
         },
-        "Vlan14": {
+        "Vlan54": {
             "members": [
                 "Ethernet4"
             ],
-            "vlanid": "14"
+            "vlanid": "54"
         },
-        "Vlan15": {
+        "Vlan55": {
             "members": [
                 "Ethernet5"
             ],
-            "vlanid": "15"
+            "vlanid": "55"
         },
-        "Vlan16": {
+        "Vlan56": {
             "members": [
                 "Ethernet6"
             ],
-            "vlanid": "16"
+            "vlanid": "56"
         },
-        "Vlan17": {
+        "Vlan57": {
             "members": [
                 "Ethernet7"
             ],
-            "vlanid": "17"
+            "vlanid": "57"
         }
     },
     "VLAN_MEMBER": {
-        "Vlan10|Ethernet0": {
+        "Vlan50|Ethernet0": {
             "tagging_mode": "untagged"
         },
-        "Vlan11|Ethernet1": {
+        "Vlan51|Ethernet1": {
             "tagging_mode": "untagged"
         },
-        "Vlan12|Ethernet2": {
+        "Vlan52|Ethernet2": {
             "tagging_mode": "untagged"
         },
-        "Vlan13|Ethernet3": {
+        "Vlan53|Ethernet3": {
             "tagging_mode": "untagged"
         },
-        "Vlan14|Ethernet4": {
+        "Vlan54|Ethernet4": {
             "tagging_mode": "untagged"
         },
-        "Vlan15|Ethernet5": {
+        "Vlan55|Ethernet5": {
             "tagging_mode": "untagged"
         },
-        "Vlan16|Ethernet6": {
+        "Vlan56|Ethernet6": {
             "tagging_mode": "untagged"
         },
-        "Vlan17|Ethernet7": {
+        "Vlan57|Ethernet7": {
             "tagging_mode": "untagged"
         }
     },
     "VLAN_INTERFACE": {
-        "Vlan10|10.0.0.16/31": {},
-        "Vlan11|10.0.0.18/31": {},
-        "Vlan12|10.0.0.20/31": {},
-        "Vlan13|10.0.0.22/31": {},
-        "Vlan14|10.0.0.81/31": {},
-        "Vlan15|10.0.0.97/31": {},
-        "Vlan16|10.0.0.113/31": {},
-        "Vlan17|10.0.0.129/31": {}
+        "Vlan50|10.0.0.16/31": {},
+        "Vlan51|10.0.0.18/31": {},
+        "Vlan52|10.0.0.20/31": {},
+        "Vlan53|10.0.0.22/31": {},
+        "Vlan54|10.0.0.81/31": {},
+        "Vlan55|10.0.0.97/31": {},
+        "Vlan56|10.0.0.113/31": {},
+        "Vlan57|10.0.0.129/31": {}
     }
 }

@@ -4,16 +4,17 @@ strict graph {
 	aggs1	 [bgp_asn=65000,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=lightgrey,
+		fillcolor=red,
 		label="aggs1
 65000
 10.0.255.0",
 		loopback="10.0.255.0",
 		mac="00:dc:5e:01:01:00",
-		pid=4253,
+		pid=5365,
 		pod=None,
 		rank=1,
-		style=filled];
+		style=filled,
+		vlan_base=0];
 	"iface-80"	 [bgp_asn=65004,
 		bgp_peer="10.0.0.81",
 		customer=False,
@@ -225,16 +226,17 @@ strict graph {
 	aggs2	 [bgp_asn=65001,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=orangered,
 		label="aggs2
 65001
 10.0.255.1",
 		loopback="10.0.255.1",
 		mac="00:dc:5e:01:01:01",
-		pid=4300,
+		pid=5418,
 		pod=None,
 		rank=1,
-		style=filled];
+		style=filled,
+		vlan_base=10];
 	"iface-96"	 [bgp_asn=65004,
 		bgp_peer="10.0.0.97",
 		customer=False,
@@ -446,16 +448,17 @@ strict graph {
 	aggs3	 [bgp_asn=65002,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=red,
+		fillcolor=lightgrey,
 		label="aggs3
 65002
 10.0.255.2",
 		loopback="10.0.255.2",
 		mac="00:dc:5e:01:01:02",
-		pid=4345,
+		pid=5464,
 		pod=None,
 		rank=1,
-		style=filled];
+		style=filled,
+		vlan_base=20];
 	"iface-112"	 [bgp_asn=65004,
 		bgp_peer="10.0.0.113",
 		customer=False,
@@ -667,16 +670,17 @@ strict graph {
 	aggs4	 [bgp_asn=65003,
 		dev_role=aggs,
 		dev_type="microsoft-sonic",
-		fillcolor=orangered,
+		fillcolor=coral,
 		label="aggs4
 65003
 10.0.255.3",
 		loopback="10.0.255.3",
 		mac="00:dc:5e:01:01:03",
-		pid=4392,
+		pid=5511,
 		pod=None,
 		rank=1,
-		style=filled];
+		style=filled,
+		vlan_base=30];
 	"iface-128"	 [bgp_asn=65004,
 		bgp_peer="10.0.0.129",
 		customer=False,
@@ -894,10 +898,11 @@ strict graph {
 10.0.255.4",
 		loopback="10.0.255.4",
 		mac="00:dc:5e:01:01:04",
-		pid=4443,
+		pid=5556,
 		pod=A,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=40];
 	"iface-16"	 [bgp_asn=65012,
 		bgp_peer="10.0.0.17",
 		customer=False,
@@ -1019,10 +1024,11 @@ strict graph {
 10.0.255.5",
 		loopback="10.0.255.5",
 		mac="00:dc:5e:01:01:05",
-		pid=4490,
+		pid=5601,
 		pod=A,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=50];
 	"iface-24"	 [bgp_asn=65012,
 		bgp_peer="10.0.0.25",
 		customer=False,
@@ -1144,10 +1150,11 @@ strict graph {
 10.0.255.6",
 		loopback="10.0.255.6",
 		mac="00:dc:5e:01:01:06",
-		pid=4536,
+		pid=5649,
 		pod=A,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=60];
 	"iface-32"	 [bgp_asn=65012,
 		bgp_peer="10.0.0.33",
 		customer=False,
@@ -1269,10 +1276,11 @@ strict graph {
 10.0.255.7",
 		loopback="10.0.255.7",
 		mac="00:dc:5e:01:01:07",
-		pid=4581,
+		pid=5693,
 		pod=A,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=70];
 	"iface-40"	 [bgp_asn=65012,
 		bgp_peer="10.0.0.41",
 		customer=False,
@@ -1388,16 +1396,17 @@ strict graph {
 	spine21	 [bgp_asn=65008,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine21
 65008
 10.0.255.8",
 		loopback="10.0.255.8",
 		mac="00:dc:5e:01:01:08",
-		pid=4627,
+		pid=5739,
 		pod=B,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=80];
 	"iface-48"	 [bgp_asn=65016,
 		bgp_peer="10.0.0.49",
 		customer=False,
@@ -1513,16 +1522,17 @@ strict graph {
 	spine22	 [bgp_asn=65009,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine22
 65009
 10.0.255.9",
 		loopback="10.0.255.9",
 		mac="00:dc:5e:01:01:09",
-		pid=4672,
+		pid=5785,
 		pod=B,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=90];
 	"iface-56"	 [bgp_asn=65016,
 		bgp_peer="10.0.0.57",
 		customer=False,
@@ -1638,16 +1648,17 @@ strict graph {
 	spine23	 [bgp_asn=65010,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine23
 65010
 10.0.255.10",
 		loopback="10.0.255.10",
 		mac="00:dc:5e:01:01:0a",
-		pid=4717,
+		pid=5832,
 		pod=B,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=100];
 	"iface-64"	 [bgp_asn=65016,
 		bgp_peer="10.0.0.65",
 		customer=False,
@@ -1763,16 +1774,17 @@ strict graph {
 	spine24	 [bgp_asn=65011,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="spine24
 65011
 10.0.255.11",
 		loopback="10.0.255.11",
 		mac="00:dc:5e:01:01:0b",
-		pid=4766,
+		pid=5876,
 		pod=B,
 		rank=4,
-		style=filled];
+		style=filled,
+		vlan_base=110];
 	"iface-72"	 [bgp_asn=65016,
 		bgp_peer="10.0.0.73",
 		customer=False,
@@ -1894,10 +1906,11 @@ strict graph {
 10.0.255.12",
 		loopback="10.0.255.12",
 		mac="00:dc:5e:01:01:0c",
-		pid=4817,
+		pid=5926,
 		pod=A,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=120];
 	"iface-0"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -1936,10 +1949,11 @@ strict graph {
 10.0.255.13",
 		loopback="10.0.255.13",
 		mac="00:dc:5e:01:01:0d",
-		pid=4867,
+		pid=5980,
 		pod=A,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=130];
 	"iface-2"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -1978,10 +1992,11 @@ strict graph {
 10.0.255.14",
 		loopback="10.0.255.14",
 		mac="00:dc:5e:01:01:0e",
-		pid=4912,
+		pid=6032,
 		pod=A,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=140];
 	"iface-4"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -2020,10 +2035,11 @@ strict graph {
 10.0.255.15",
 		loopback="10.0.255.15",
 		mac="00:dc:5e:01:01:0f",
-		pid=4957,
+		pid=6079,
 		pod=A,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=150];
 	"iface-6"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -2056,16 +2072,17 @@ strict graph {
 	leaf21	 [bgp_asn=65016,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf21
 65016
 10.0.255.16",
 		loopback="10.0.255.16",
 		mac="00:dc:5e:01:01:10",
-		pid=5002,
+		pid=6125,
 		pod=B,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=160];
 	"iface-8"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -2098,16 +2115,17 @@ strict graph {
 	leaf22	 [bgp_asn=65017,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf22
 65017
 10.0.255.17",
 		loopback="10.0.255.17",
 		mac="00:dc:5e:01:01:11",
-		pid=5049,
+		pid=6172,
 		pod=B,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=170];
 	"iface-10"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -2140,16 +2158,17 @@ strict graph {
 	leaf23	 [bgp_asn=65018,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf23
 65018
 10.0.255.18",
 		loopback="10.0.255.18",
 		mac="00:dc:5e:01:01:12",
-		pid=5096,
+		pid=6219,
 		pod=B,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=180];
 	"iface-12"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -2182,16 +2201,17 @@ strict graph {
 	leaf24	 [bgp_asn=65019,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=magenta,
+		fillcolor=gold,
 		label="leaf24
 65019
 10.0.255.19",
 		loopback="10.0.255.19",
 		mac="00:dc:5e:01:01:13",
-		pid=5140,
+		pid=6266,
 		pod=B,
 		rank=7,
-		style=filled];
+		style=filled,
+		vlan_base=190];
 	"iface-14"	 [customer=True,
 		dev_name=Ethernet0,
 		dev_type=port,
@@ -2224,7 +2244,7 @@ strict graph {
 	host1	 [dev_role=hosts,
 		dev_type=ubuntu,
 		fillcolor=cyan,
-		pid=5186,
+		pid=6316,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2233,7 +2253,7 @@ strict graph {
 	host2	 [dev_role=hosts,
 		dev_type=ubuntu,
 		fillcolor=cyan,
-		pid=5244,
+		pid=6371,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2242,7 +2262,7 @@ strict graph {
 	host3	 [dev_role=hosts,
 		dev_type=ubuntu,
 		fillcolor=cyan,
-		pid=5307,
+		pid=6427,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2251,7 +2271,7 @@ strict graph {
 	host4	 [dev_role=hosts,
 		dev_type=ubuntu,
 		fillcolor=cyan,
-		pid=5369,
+		pid=6491,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -2259,8 +2279,8 @@ strict graph {
 		phy=port];
 	host5	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
-		pid=5423,
+		fillcolor=gold,
+		pid=6547,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2268,8 +2288,8 @@ strict graph {
 		phy=port];
 	host6	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
-		pid=5478,
+		fillcolor=gold,
+		pid=6603,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2277,8 +2297,8 @@ strict graph {
 		phy=port];
 	host7	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
-		pid=5532,
+		fillcolor=gold,
+		pid=6656,
 		pod=B,
 		rank=10,
 		style=filled];
@@ -2286,8 +2306,8 @@ strict graph {
 		phy=port];
 	host8	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=magenta,
-		pid=5588,
+		fillcolor=gold,
+		pid=6712,
 		pod=B,
 		rank=10,
 		style=filled];

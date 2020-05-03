@@ -26,6 +26,9 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.4.1`:
+- Major bug fixing: unique VLANs per SONiC P4 switch are added, now the hosts can communicate to each other without issues
+
 Release `0.4.0`:
 - Added the Docker part including creation and management of the Docker containers using Python.
 - The `requirements.txt` is modified to add the `docker` library.
@@ -74,7 +77,7 @@ Release `0.1.2`:
 - Changing the colouring of the nodes.
 - Changed the pod structure per the blogpost (HS. Part 2.).
 
-Relesase `0.1.1`:
+Release `0.1.1`:
 - Added the `inventory` folder containing the information for the topology generation.
 - The intend topology is stored in `inventory/build.yaml`.
 - The Bash script `prepare.sh` installs the Graphviz software from the original repository. The version for CentOS is used, so may requre changes if you use another operation system.

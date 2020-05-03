@@ -51,9 +51,6 @@ if __name__ == '__main__':
                 elif (len(format(dev_id, 'x'))) < 3:
                     DG.nodes[elem['name']]['mac'] = f'00:dc:5e:01:01:{format(dev_id, "x")}'
 
-                if DG.nodes[elem['name']]['dev_type'] == 'microsoft-sonic':
-                    DG.nodes[elem['name']]['vlan_base'] = (1 + dev_id) * 10
-
                 dev_id += 1
 
             list_of_primitives.append(elem['dev_type']) if elem['dev_type'] not in list_of_primitives else None

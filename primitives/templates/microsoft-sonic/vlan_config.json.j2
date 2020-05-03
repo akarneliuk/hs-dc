@@ -2,18 +2,18 @@
     "VLAN": {
 {%- for iface_entry in temp_data.interfaces %}
 {%- if loop.index0 > 0 %},{% endif %}
-        "Vlan{{ iface_entry.vlan }}": {
+        "Vlan{{ temp_data.general.vlan_base + iface_entry.vlan }}": {
             "members": [
                 "{{ iface_entry.dev_name }}"
             ],
-            "vlanid": "{{ iface_entry.vlan }}"
+            "vlanid": "{{ temp_data.general.vlan_base + iface_entry.vlan }}"
         }
 {%- endfor %}
     },
     "VLAN_MEMBER": {
 {%- for iface_entry in temp_data.interfaces %}
 {%- if loop.index0 > 0 %},{% endif %}
-        "Vlan{{ iface_entry.vlan }}|{{ iface_entry.dev_name }}": {
+        "Vlan{{ temp_data.general.vlan_base + iface_entry.vlan }}|{{ iface_entry.dev_name }}": {
             "tagging_mode": "untagged"
         }
 {%- endfor %}
@@ -21,7 +21,7 @@
     "VLAN_INTERFACE": {
 {%- for iface_entry in temp_data.interfaces %}
 {%- if loop.index0 > 0 %},{% endif %}
-        "Vlan{{ iface_entry.vlan }}|{{ iface_entry.ipv4 }}": {}
+        "Vlan{{ temp_data.general.vlan_base + iface_entry.vlan }}|{{ iface_entry.ipv4 }}": {}
 {%- endfor %}
     }
 }
