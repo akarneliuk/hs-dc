@@ -1,0 +1,118 @@
+{
+  "srl_nokia-interfaces:interface": [
+    {
+      "name": "ethernet-1/1",
+      "admin-state": "enable",
+      "subinterface": [
+        {
+          "index": 0,
+          "ipv4": {
+            "address": [
+              {
+                "ip-prefix": "10.0.0.0/31"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ethernet-1/2",
+      "admin-state": "enable",
+      "subinterface": [
+        {
+          "index": 0,
+          "ipv4": {
+            "address": [
+              {
+                "ip-prefix": "10.0.0.2/31"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "lo0",
+      "admin-state": "enable",
+      "subinterface": [
+        {
+          "index": 0,
+          "ipv4": {
+            "address": [
+              {
+                "ip-prefix": "10.1.1.1/32"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "srl_nokia-network-instance:network-instance": [
+    {
+      "name": "default",
+      "admin-state": "enable",
+      "ip-forwarding": {
+        "receive-ipv4-check": true
+      },
+      "interface": [
+        {
+          "name": "ethernet-1/1.0"
+        },
+        {
+          "name": "ethernet-1/2.0"
+        },
+        {
+          "name": "lo0.0"
+        }
+      ],
+      "protocols": {
+        "srl_nokia-bgp:bgp": {
+          "admin-state": "enable",
+          "autonomous-system": 65101,
+          "router-id": "10.1.1.1",
+          "group": [
+            {
+              "group-name": "PG_PEERS",
+              "admin-state": "enable",
+              "export-policy": "PS_ALLOW",
+              "import-policy": "PS_ALLOW"
+            }
+          ],
+          "ipv4-unicast": {
+            "admin-state": "enable"
+          },
+          "neighbor": [
+            {
+              "peer-address": "10.0.0.1",
+              "admin-state": "enable",
+              "peer-as": 65111,
+              "peer-group": "PG_PEERS"
+            },
+            {
+              "peer-address": "10.0.0.3",
+              "admin-state": "enable",
+              "peer-as": 65112,
+              "peer-group": "PG_PEERS"
+            }
+          ],
+          "route-advertisement": {
+            "rapid-withdrawal": true
+          }
+        }
+      }
+    }
+  ],
+  "srl_nokia-routing-policy:routing-policy": {
+    "policy": [
+      {
+        "name": "PS_ALLOW",
+        "default-action": {
+          "accept": {
+          }
+        }
+      }
+    ]
+  }
+}

@@ -26,6 +26,9 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.5.0`:
+- Added the new directory `mix_config`, which contains the configuration files and the sample build of the DC with 2x Nokia SRL, 2x Microsoft Azure SONiC, 2x Ubuntu hosts.
+
 Release `0.4.2`:
 - Original Bash scripts are moved to `ref_config` folder.
 - The debug print statements are removed from the `main.py`.

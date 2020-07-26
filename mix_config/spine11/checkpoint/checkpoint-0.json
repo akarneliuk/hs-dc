@@ -1,0 +1,564 @@
+{
+  "_preamble": {
+    "header": {
+      "generated-by": "SRLINUX",
+      "name": "checkpoint-2020-07-26T16:32:45.219Z",
+      "comment": "",
+      "created": "2020-07-26T16:32:45.220Z",
+      "release": "v19.11.7",
+      "checksum": "34179810cfe05d07$13b8ea35b464940e716fe569b8b1efeaa3c89c47"
+    },
+    "build": {
+      "git-branch": "",
+      "git-tag": "v19.11.7-76-ged9563a",
+      "git-sha": "ed9563a432000fe7643bd27e79715c7507eb1437"
+    },
+    "application": [
+      {
+        "name": "aaa_mgr_setup",
+        "path": "n/a",
+        "version": "n/a"
+      },
+      {
+        "name": "aaa_mgr",
+        "path": "/opt/srlinux/bin/sr_aaa_mgr",
+        "version": "2020-05-30T08:12:07.000Z"
+      },
+      {
+        "name": "acl_mgr",
+        "path": "/opt/srlinux/bin/sr_acl_mgr",
+        "version": "2020-05-30T08:14:56.000Z"
+      },
+      {
+        "name": "app_mgr",
+        "path": "/opt/srlinux/bin/sr_app_mgr",
+        "version": "2020-05-30T08:13:50.000Z"
+      },
+      {
+        "name": "arp_nd_mgr",
+        "path": "/opt/srlinux/bin/sr_arp_nd_mgr",
+        "version": "2020-05-30T08:11:03.000Z"
+      },
+      {
+        "name": "bfd_mgr",
+        "path": "/opt/srlinux/bin/sr_bfd_mgr",
+        "version": "2020-05-30T08:13:34.000Z"
+      },
+      {
+        "name": "bgp_mgr",
+        "path": "/opt/srlinux/bin/sr_bgp_mgr",
+        "version": "2020-05-30T08:14:58.000Z"
+      },
+      {
+        "name": "chassis_mgr",
+        "path": "/opt/srlinux/bin/sr_chassis_mgr",
+        "version": "2020-05-30T08:13:53.000Z"
+      },
+      {
+        "name": "dev_mgr",
+        "path": "/opt/srlinux/bin/sr_device_mgr",
+        "version": "2020-05-30T08:13:59.000Z"
+      },
+      {
+        "name": "dhcp_client_mgr",
+        "path": "/opt/srlinux/bin/sr_dhcp_client_mgr",
+        "version": "2020-05-30T08:13:17.000Z"
+      },
+      {
+        "name": "fib_mgr",
+        "path": "/opt/srlinux/bin/sr_fib_mgr",
+        "version": "2020-05-30T08:13:25.000Z"
+      },
+      {
+        "name": "gnmi_server",
+        "path": "/opt/srlinux/bin/sr_gnmi_server",
+        "version": "2020-05-30T08:13:44.000Z"
+      },
+      {
+        "name": "idb_server",
+        "path": "/opt/srlinux/bin/sr_idb_server",
+        "version": "2020-05-30T08:09:18.000Z"
+      },
+      {
+        "name": "json_rpc",
+        "path": "/opt/srlinux/bin/sr_json_rpc",
+        "version": "2020-05-30T08:13:43.000Z"
+      },
+      {
+        "name": "linux_mgr",
+        "path": "/opt/srlinux/bin/sr_linux_mgr",
+        "version": "2020-05-30T08:15:53.000Z"
+      },
+      {
+        "name": "dnsmasq",
+        "path": "/usr/sbin/dnsmasq",
+        "version": "2019-10-18T16:01:06.000Z"
+      },
+      {
+        "name": "sshd",
+        "path": "/usr/sbin/sshd",
+        "version": "2019-08-09T01:40:47.000Z"
+      },
+      {
+        "name": "ntpd",
+        "path": "/usr/sbin/ntpd",
+        "version": "2019-08-08T11:48:11.000Z"
+      },
+      {
+        "name": "vsftpd",
+        "path": "/usr/sbin/vsftpd",
+        "version": "2020-04-01T04:55:33.000Z"
+      },
+      {
+        "name": "snmpd",
+        "path": "/usr/sbin/snmpd",
+        "version": "2020-04-01T01:31:30.000Z"
+      },
+      {
+        "name": "lldp_mgr",
+        "path": "/opt/srlinux/bin/sr_lldp_mgr",
+        "version": "2020-05-30T08:13:56.000Z"
+      },
+      {
+        "name": "log_mgr",
+        "path": "/opt/srlinux/bin/sr_log_mgr",
+        "version": "2020-05-30T08:11:24.000Z"
+      },
+      {
+        "name": "mgmt_server",
+        "path": "/opt/srlinux/bin/sr_mgmt_server",
+        "version": "2020-05-30T08:13:08.000Z"
+      },
+      {
+        "name": "common",
+        "path": "n/a",
+        "version": "n/a"
+      },
+      {
+        "name": "mpls_mgr",
+        "path": "/opt/srlinux/bin/sr_mpls_mgr",
+        "version": "2020-05-30T08:12:56.000Z"
+      },
+      {
+        "name": "net_inst_mgr",
+        "path": "/opt/srlinux/bin/sr_net_inst_mgr",
+        "version": "2020-05-30T08:11:14.000Z"
+      },
+      {
+        "name": "oam_mgr",
+        "path": "/opt/srlinux/bin/sr_oam_mgr",
+        "version": "2020-05-30T08:13:23.000Z"
+      },
+      {
+        "name": "plcy_mgr",
+        "path": "/opt/srlinux/bin/sr_plcy_mgr",
+        "version": "2020-05-30T08:11:33.000Z"
+      },
+      {
+        "name": "maint_mode_mgr",
+        "path": "n/a",
+        "version": "n/a"
+      },
+      {
+        "name": "qos_mgr",
+        "path": "/opt/srlinux/bin/sr_qos_mgr",
+        "version": "2020-05-30T08:13:13.000Z"
+      },
+      {
+        "name": "sdk_mgr",
+        "path": "/opt/srlinux/bin/sr_sdk_mgr",
+        "version": "2020-05-30T08:14:17.000Z"
+      },
+      {
+        "name": "static_route_mgr",
+        "path": "/opt/srlinux/bin/sr_static_route_mgr",
+        "version": "2020-05-30T08:13:56.000Z"
+      },
+      {
+        "name": "supportd",
+        "path": "/opt/srlinux/bin/sr_supportd",
+        "version": "2020-05-30T08:08:53.000Z"
+      },
+      {
+        "name": "xdp_cpm",
+        "path": "/opt/srlinux/bin/sr_xdp_cpm",
+        "version": "2020-05-30T08:10:29.000Z"
+      },
+      {
+        "name": "xdp_lc",
+        "path": "/opt/srlinux/bin/sr_xdp_lc",
+        "version": "2020-05-30T08:10:54.000Z"
+      }
+    ],
+    "yang-module": [
+      {
+        "name": "srl_nokia-aaa",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-aaa-types",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-acl",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-aggregate-routes",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-app-mgmt",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-bfd",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-bgp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-boot",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-configuration",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-dns",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-ftp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-gnmi-server",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-icmp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-if-ip",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-interfaces",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-interfaces-ip-dhcp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-interfaces-nbr",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-interfaces-vlans",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-ip-route-tables",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-json-rpc",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-linux",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-lldp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-lldp-types",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-load-balancing",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-logging",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-maintenance-mode",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-mpls",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-mpls-route-tables",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-mtu",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-network-instance",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-network-instance-mtu",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-next-hop-groups",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-ntp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-packet-match-types",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-acl",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-chassis",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-control",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-cpu",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-disk",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-fabric",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-fan",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-ip-mpls-fwd-resources",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-lc",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-memory",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-mtu",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-psu",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-qos",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-redundancy",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-platform-resource-monitoring",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-qos",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-rib-bgp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-routing-policy",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-sflow",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-snmp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-ssh",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-static-routes",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-system",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-system-banner",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-system-info",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-system-name",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-tcp-udp",
+        "revision": "2019-11-30"
+      },
+      {
+        "name": "srl_nokia-tls",
+        "revision": "2019-11-30"
+      }
+    ]
+  },
+  "srl_nokia-interfaces:interface": [
+    {
+      "name": "ethernet-1/1",
+      "admin-state": "enable",
+      "subinterface": [
+        {
+          "index": 0,
+          "ipv4": {
+            "address": [
+              {
+                "ip-prefix": "10.0.0.0/31"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ethernet-1/2",
+      "admin-state": "enable",
+      "subinterface": [
+        {
+          "index": 0,
+          "ipv4": {
+            "address": [
+              {
+                "ip-prefix": "10.0.0.2/31"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "lo0",
+      "admin-state": "enable",
+      "subinterface": [
+        {
+          "index": 0,
+          "ipv4": {
+            "address": [
+              {
+                "ip-prefix": "10.1.1.1/32"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "srl_nokia-network-instance:network-instance": [
+    {
+      "name": "default",
+      "admin-state": "enable",
+      "ip-forwarding": {
+        "receive-ipv4-check": true
+      },
+      "interface": [
+        {
+          "name": "ethernet-1/1.0"
+        },
+        {
+          "name": "ethernet-1/2.0"
+        },
+        {
+          "name": "lo0.0"
+        }
+      ],
+      "protocols": {
+        "srl_nokia-bgp:bgp": {
+          "admin-state": "enable",
+          "autonomous-system": 65101,
+          "router-id": "10.1.1.1",
+          "group": [
+            {
+              "group-name": "PG_PEERS",
+              "admin-state": "enable",
+              "export-policy": "PS_ALLOW",
+              "import-policy": "PS_ALLOW"
+            }
+          ],
+          "ipv4-unicast": {
+            "admin-state": "enable"
+          },
+          "neighbor": [
+            {
+              "peer-address": "10.0.0.1",
+              "admin-state": "enable",
+              "peer-as": 65111,
+              "peer-group": "PG_PEERS"
+            },
+            {
+              "peer-address": "10.0.0.3",
+              "admin-state": "enable",
+              "peer-as": 65112,
+              "peer-group": "PG_PEERS"
+            }
+          ],
+          "route-advertisement": {
+            "rapid-withdrawal": true
+          }
+        }
+      }
+    }
+  ],
+  "srl_nokia-routing-policy:routing-policy": {
+    "policy": [
+      {
+        "name": "PS_ALLOW",
+        "default-action": {
+          "accept": {
+          }
+        }
+      }
+    ]
+  }
+}
