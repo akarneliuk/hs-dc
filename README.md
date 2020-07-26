@@ -5,6 +5,7 @@ There are plenty of technical challenges associated with the build of the hyper-
 ### Data Centre
 - Mellanox P4-switch
 - Microsoft Azure SONiC
+- Nokia SRLinux
 
 ### Development host
 - Linux: CentOS 7
@@ -27,7 +28,7 @@ The following ideas are in the pipeline to be implmeneted:
 
 ## Change log
 Release `0.5.0`:
-- Added the new directory `mix_config`, which contains the configuration files and the sample build of the DC with 2x Nokia SRL, 2x Microsoft Azure SONiC, 2x Ubuntu hosts.
+- Added the new directory `mix_config`, which contains the configuration files and the sample build of the DC with 2x Nokia SRLinux, 2x Microsoft Azure SONiC, 2x Ubuntu hosts.
 
 Release `0.4.2`:
 - Original Bash scripts are moved to `ref_config` folder.
