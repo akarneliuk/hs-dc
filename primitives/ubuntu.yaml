@@ -1,7 +1,7 @@
 ---
 iface:
   name: eth
-  start: 0
+  start: 1
 image:
   type: docker
   name: ubuntu:14.04

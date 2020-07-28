@@ -4,7 +4,7 @@ strict graph "" {
 	spine11	 [bgp_asn=65000,
 		dev_role=spines,
 		dev_type="nokia-srlinux",
-		fillcolor=coral,
+		fillcolor=gold,
 		label="spine11
 65000
 10.0.255.0",
@@ -13,36 +13,36 @@ strict graph "" {
 		pod=A,
 		rank=4,
 		style=filled];
-	"iface-4"	 [dev_name="ethernet-1/0",
+	"iface-4"	 [dev_name="ethernet-1/1",
 		dev_type=port,
 		ipv4="10.0.0.4/31",
-		label="ethernet-1/0
+		label="ethernet-1/1
 10.0.0.4/31",
 		rank=5];
 	spine11 -- "iface-4"	 [color=black,
 		phy=port];
-	"iface-6"	 [dev_name="ethernet-1/1",
+	"iface-6"	 [dev_name="ethernet-1/2",
 		dev_type=port,
 		ipv4="10.0.0.6/31",
-		label="ethernet-1/1
+		label="ethernet-1/2
 10.0.0.6/31",
 		rank=5];
 	spine11 -- "iface-6"	 [color=black,
 		phy=port];
-	"iface-5"	 [dev_name="ethernet-1/1",
+	"iface-5"	 [dev_name="ethernet-1/2",
 		dev_type=port,
 		ipv4="10.0.0.5/31",
-		label="ethernet-1/1
+		label="ethernet-1/2
 10.0.0.5/31",
 		rank=6];
 	"iface-4" -- "iface-5"	 [color=coral,
 		linux_bridge=hs_br_4,
 		phy=wire,
 		role=dc];
-	"iface-7"	 [dev_name=Ethernet1,
+	"iface-7"	 [dev_name=Ethernet2,
 		dev_type=port,
 		ipv4="10.0.0.7/31",
-		label="Ethernet1
+		label="Ethernet2
 10.0.0.7/31",
 		rank=6];
 	"iface-6" -- "iface-7"	 [color=coral,
@@ -52,7 +52,7 @@ strict graph "" {
 	spine12	 [bgp_asn=65001,
 		dev_role=spines,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=gold,
 		label="spine12
 65001
 10.0.255.1",
@@ -62,36 +62,36 @@ strict graph "" {
 		rank=4,
 		style=filled,
 		vlan_base=10];
-	"iface-8"	 [dev_name=Ethernet0,
+	"iface-8"	 [dev_name=Ethernet1,
 		dev_type=port,
 		ipv4="10.0.0.8/31",
-		label="Ethernet0
+		label="Ethernet1
 10.0.0.8/31",
 		rank=5];
 	spine12 -- "iface-8"	 [color=black,
 		phy=port];
-	"iface-10"	 [dev_name=Ethernet1,
+	"iface-10"	 [dev_name=Ethernet2,
 		dev_type=port,
 		ipv4="10.0.0.10/31",
-		label="Ethernet1
+		label="Ethernet2
 10.0.0.10/31",
 		rank=5];
 	spine12 -- "iface-10"	 [color=black,
 		phy=port];
-	"iface-9"	 [dev_name="ethernet-1/2",
+	"iface-9"	 [dev_name="ethernet-1/3",
 		dev_type=port,
 		ipv4="10.0.0.9/31",
-		label="ethernet-1/2
+		label="ethernet-1/3
 10.0.0.9/31",
 		rank=6];
 	"iface-8" -- "iface-9"	 [color=coral,
 		linux_bridge=hs_br_8,
 		phy=wire,
 		role=dc];
-	"iface-11"	 [dev_name=Ethernet2,
+	"iface-11"	 [dev_name=Ethernet3,
 		dev_type=port,
 		ipv4="10.0.0.11/31",
-		label="Ethernet2
+		label="Ethernet3
 10.0.0.11/31",
 		rank=6];
 	"iface-10" -- "iface-11"	 [color=coral,
@@ -101,7 +101,7 @@ strict graph "" {
 	leaf11	 [bgp_asn=65002,
 		dev_role=leafs,
 		dev_type="nokia-srlinux",
-		fillcolor=coral,
+		fillcolor=gold,
 		label="leaf11
 65002
 10.0.255.2",
@@ -110,10 +110,10 @@ strict graph "" {
 		pod=A,
 		rank=7,
 		style=filled];
-	"iface-0"	 [dev_name="ethernet-1/0",
+	"iface-0"	 [dev_name="ethernet-1/1",
 		dev_type=port,
 		ipv4="192.168.10.0/31",
-		label="ethernet-1/0
+		label="ethernet-1/1
 192.168.10.0/31",
 		rank=8];
 	leaf11 -- "iface-0"	 [color=black,
@@ -122,10 +122,10 @@ strict graph "" {
 		phy=port];
 	leaf11 -- "iface-9"	 [color=black,
 		phy=port];
-	"iface-1"	 [dev_name=eth0,
+	"iface-1"	 [dev_name=eth1,
 		dev_type=port,
 		ipv4="192.168.10.1/31",
-		label="eth0
+		label="eth1
 192.168.10.1/31",
 		rank=9];
 	"iface-0" -- "iface-1"	 [color=coral,
@@ -135,7 +135,7 @@ strict graph "" {
 	leaf12	 [bgp_asn=65003,
 		dev_role=leafs,
 		dev_type="microsoft-sonic",
-		fillcolor=coral,
+		fillcolor=gold,
 		label="leaf12
 65003
 10.0.255.3",
@@ -145,10 +145,10 @@ strict graph "" {
 		rank=7,
 		style=filled,
 		vlan_base=30];
-	"iface-2"	 [dev_name=Ethernet0,
+	"iface-2"	 [dev_name=Ethernet1,
 		dev_type=port,
 		ipv4="192.168.10.2/31",
-		label="Ethernet0
+		label="Ethernet1
 192.168.10.2/31",
 		rank=8];
 	leaf12 -- "iface-2"	 [color=black,
@@ -157,10 +157,10 @@ strict graph "" {
 		phy=port];
 	leaf12 -- "iface-11"	 [color=black,
 		phy=port];
-	"iface-3"	 [dev_name=eth0,
+	"iface-3"	 [dev_name=eth1,
 		dev_type=port,
 		ipv4="192.168.10.3/31",
-		label="eth0
+		label="eth1
 192.168.10.3/31",
 		rank=9];
 	"iface-2" -- "iface-3"	 [color=coral,
@@ -169,7 +169,7 @@ strict graph "" {
 		role=customer];
 	host1	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=coral,
+		fillcolor=gold,
 		pod=A,
 		rank=10,
 		style=filled];
@@ -177,7 +177,7 @@ strict graph "" {
 		phy=port];
 	host2	 [dev_role=hosts,
 		dev_type=ubuntu,
-		fillcolor=coral,
+		fillcolor=gold,
 		pod=A,
 		rank=10,
 		style=filled];

@@ -30,6 +30,7 @@ The following ideas are in the pipeline to be implmeneted:
 Release `0.5.1`:
 - Added the coditionals to the build of the network graph so that it verifies if the devices' types are presented in the `inventory/build.yaml`.
 - Added the support for the CentOS 8.
+- Fixed bug that the `iface.start` paramter from the inventory wasn't used.
 
 Release `0.5.0`:
 - Added the new directory `mix_config`, which contains the configuration files and the sample build of the DC with 2x Nokia SRLinux, 2x Microsoft Azure SONiC, 2x Ubuntu hosts.
