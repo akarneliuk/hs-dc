@@ -8,11 +8,11 @@ There are plenty of technical challenges associated with the build of the hyper-
 - Nokia SRLinux
 
 ### Development host
-- Linux: CentOS 7
+- Linux: CentOS 7/8.1
 - Containers: Docker 19.03.8
 - Automation and orchestartion: Python 3.8
 - Graph modelling: NetworkX 2.4
-- Visualisation: Graphviz 2.30.1
+- Visualisation: Graphviz 2.40.1
 
 ## Structure
 Main components:
@@ -27,6 +27,10 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.5.1`:
+- Added the coditionals to the build of the network graph so that it verifies if the devices' types are presented in the `inventory/build.yaml`.
+- Added the support for the CentOS 8.
+
 Release `0.5.0`:
 - Added the new directory `mix_config`, which contains the configuration files and the sample build of the DC with 2x Nokia SRLinux, 2x Microsoft Azure SONiC, 2x Ubuntu hosts.
 

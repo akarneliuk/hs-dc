@@ -68,63 +68,76 @@ if __name__ == '__main__':
     if_id = 0
     ip_addr = netaddr.IPNetwork(resources['ip']['customer'])
 
-    for le in inventory['leafs']:
-        for ho in inventory['hosts']:
-           if ho['connection_point'] == le['name']:
-               DG.add_node(f'iface-{if_id}', label=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}\n{str(ip_addr[if_id]).split("/")[0]}/31',
-                           ipv4=f'{str(ip_addr[if_id]).split("/")[0]}/31', dev_name=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}',
-                           dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[le["name"]]["dev_role"], DG.nodes[ho["name"]]["dev_role"]]))
-               DG.add_edge(le['name'], f'iface-{if_id}', phy='port', color='black')
 
-               DG.add_node(f'iface-{if_id + 1}', label=f'{primitives[ho["dev_type"]]["iface"]["name"]}{if_count[ho["name"]]}\n{str(ip_addr[if_id + 1]).split("/")[0]}/31',
-                           ipv4=f'{str(ip_addr[if_id + 1]).split("/")[0]}/31', dev_name=f'{primitives[ho["dev_type"]]["iface"]["name"]}{if_count[ho["name"]]}',
-                           dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[ho["name"]]["dev_role"], DG.nodes[le["name"]]["dev_role"]]))
-               DG.add_edge(ho['name'], f'iface-{if_id + 1}', phy='port', color='black')
-
-               DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='customer', color='coral', linux_bridge=f'hs_br_{if_id}')
-
-               if_id += 2
-               if_count[le["name"]] += 1
-               if_count[ho["name"]] += 1
-
-    ip_addr = netaddr.IPNetwork(resources['ip']['dc'])
-
-    for sp in inventory['spines']:
+    if 'leafs' in inventory and 'hosts' in inventory:
         for le in inventory['leafs']:
-           if sp['pod'] == le['pod']:
-               DG.add_node(f'iface-{if_id}', label=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}\n{str(ip_addr[if_id]).split("/")[0]}/31',
-                           ipv4=f'{str(ip_addr[if_id]).split("/")[0]}/31', dev_name=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}',
-                           dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[sp["name"]]["dev_role"], DG.nodes[le["name"]]["dev_role"]]))
-               DG.add_edge(sp['name'], f'iface-{if_id}', phy='port', color='black')
+            for ho in inventory['hosts']:
+               if ho['connection_point'] == le['name']:
+                   DG.add_node(f'iface-{if_id}', label=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}\n{str(ip_addr[if_id]).split("/")[0]}/31',
+                               ipv4=f'{str(ip_addr[if_id]).split("/")[0]}/31', dev_name=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}',
+                               dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[le["name"]]["dev_role"], DG.nodes[ho["name"]]["dev_role"]]))
+                   DG.add_edge(le['name'], f'iface-{if_id}', phy='port', color='black')
 
-               DG.add_node(f'iface-{if_id + 1}', label=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}\n{str(ip_addr[if_id + 1]).split("/")[0]}/31',
-                           ipv4=f'{str(ip_addr[if_id + 1]).split("/")[0]}/31', dev_name=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}',
-                           dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[le["name"]]["dev_role"], DG.nodes[sp["name"]]["dev_role"]]))
-               DG.add_edge(le['name'], f'iface-{if_id + 1}', phy='port', color='black')
+                   DG.add_node(f'iface-{if_id + 1}', label=f'{primitives[ho["dev_type"]]["iface"]["name"]}{if_count[ho["name"]]}\n{str(ip_addr[if_id + 1]).split("/")[0]}/31',
+                               ipv4=f'{str(ip_addr[if_id + 1]).split("/")[0]}/31', dev_name=f'{primitives[ho["dev_type"]]["iface"]["name"]}{if_count[ho["name"]]}',
+                               dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[ho["name"]]["dev_role"], DG.nodes[le["name"]]["dev_role"]]))
+                   DG.add_edge(ho['name'], f'iface-{if_id + 1}', phy='port', color='black')
 
-               DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='dc', color='coral', linux_bridge=f'hs_br_{if_id}')
+                   DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='customer', color='coral', linux_bridge=f'hs_br_{if_id}')
 
-               if_id += 2
-               if_count[sp["name"]] += 1
-               if_count[le["name"]] += 1
+                   if_id += 2
+                   if_count[le["name"]] += 1
+                   if_count[ho["name"]] += 1
 
-    for ag in inventory['aggs']:
+        ip_addr = netaddr.IPNetwork(resources['ip']['dc'])
+
+    if 'spines' in inventory and 'leafs' in inventory:
         for sp in inventory['spines']:
-               DG.add_node(f'iface-{if_id}', label=f'{primitives[ag["dev_type"]]["iface"]["name"]}{if_count[ag["name"]]}\n{str(ip_addr[if_id]).split("/")[0]}/31',
-                           ipv4=f'{str(ip_addr[if_id]).split("/")[0]}/31', dev_name=f'{primitives[ag["dev_type"]]["iface"]["name"]}{if_count[ag["name"]]}',
-                           dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[ag["name"]]["dev_role"], DG.nodes[sp["name"]]["dev_role"]]))
-               DG.add_edge(ag['name'], f'iface-{if_id}', phy='port', color='black')
+            for le in inventory['leafs']:
+               if sp['pod'] == le['pod']:
+                   DG.add_node(f'iface-{if_id}', label=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}\n{str(ip_addr[if_id]).split("/")[0]}/31',
+                               ipv4=f'{str(ip_addr[if_id]).split("/")[0]}/31', dev_name=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}',
+                               dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[sp["name"]]["dev_role"], DG.nodes[le["name"]]["dev_role"]]))
+                   DG.add_edge(sp['name'], f'iface-{if_id}', phy='port', color='black')
 
-               DG.add_node(f'iface-{if_id + 1}', label=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}\n{str(ip_addr[if_id + 1]).split("/")[0]}/31',
-                           ipv4=f'{str(ip_addr[if_id + 1]).split("/")[0]}/31', dev_name=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}',
-                           dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[sp["name"]]["dev_role"], DG.nodes[ag["name"]]["dev_role"]]))
-               DG.add_edge(sp['name'], f'iface-{if_id + 1}', phy='port', color='black')
+                   DG.add_node(f'iface-{if_id + 1}', label=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}\n{str(ip_addr[if_id + 1]).split("/")[0]}/31',
+                               ipv4=f'{str(ip_addr[if_id + 1]).split("/")[0]}/31', dev_name=f'{primitives[le["dev_type"]]["iface"]["name"]}{if_count[le["name"]]}',
+                               dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[le["name"]]["dev_role"], DG.nodes[sp["name"]]["dev_role"]]))
+                   DG.add_edge(le['name'], f'iface-{if_id + 1}', phy='port', color='black')
 
-               DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='dc', color='coral', linux_bridge=f'hs_br_{if_id}')
+                   DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='dc', color='coral', linux_bridge=f'hs_br_{if_id}')
 
-               if_id += 2
-               if_count[ag["name"]] += 1
-               if_count[sp["name"]] += 1
+                   if_id += 2
+                   if_count[sp["name"]] += 1
+                   if_count[le["name"]] += 1
+
+    if 'aggs' in inventory and 'spines' in inventory:
+        for ag in inventory['aggs']:
+            for sp in inventory['spines']:
+                   DG.add_node(f'iface-{if_id}', label=f'{primitives[ag["dev_type"]]["iface"]["name"]}{if_count[ag["name"]]}\n{str(ip_addr[if_id]).split("/")[0]}/31',
+                               ipv4=f'{str(ip_addr[if_id]).split("/")[0]}/31', dev_name=f'{primitives[ag["dev_type"]]["iface"]["name"]}{if_count[ag["name"]]}',
+                               dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[ag["name"]]["dev_role"], DG.nodes[sp["name"]]["dev_role"]]))
+                   DG.add_edge(ag['name'], f'iface-{if_id}', phy='port', color='black')
+
+                   DG.add_node(f'iface-{if_id + 1}', label=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}\n{str(ip_addr[if_id + 1]).split("/")[0]}/31',
+                               ipv4=f'{str(ip_addr[if_id + 1]).split("/")[0]}/31', dev_name=f'{primitives[sp["dev_type"]]["iface"]["name"]}{if_count[sp["name"]]}',
+                               dev_type='port', rank=set_rank(resources['ranks'], [DG.nodes[sp["name"]]["dev_role"], DG.nodes[ag["name"]]["dev_role"]]))
+                   DG.add_edge(sp['name'], f'iface-{if_id + 1}', phy='port', color='black')
+
+                   DG.add_edge(f'iface-{if_id}', f'iface-{if_id + 1}', phy='wire', role='dc', color='coral', linux_bridge=f'hs_br_{if_id}')
+
+                   if_id += 2
+                   if_count[ag["name"]] += 1
+                   if_count[sp["name"]] += 1
+
+    # Visualising the graph
+    VG = networkx.drawing.nx_agraph.to_agraph(DG)
+
+    with open(path_output, 'w') as file:
+        file.write(str(VG))
+
+    VG.layout('dot')
+    VG.draw(f'{path_output}.png')
 
     # Building the lab topology
     for node_entry in DG.nodes.data():
@@ -261,7 +274,7 @@ if __name__ == '__main__':
                 container_node.exec_run('sh /sonic/scripts/startup.sh', detach=True)
                 print('sh /sonic/scripts/startup.sh')
 
-    # Modigyin FW rules
+    # Modifuing FW rules
     os.system(f'sudo iptables -I FORWARD 1 -s {resources["ip"]["loop"]} -d {resources["ip"]["loop"]} -j ACCEPT')
     os.system(f'sudo iptables -I FORWARD 1 -s {resources["ip"]["loop"]} -d {resources["ip"]["customer"]} -j ACCEPT')
     os.system(f'sudo iptables -I FORWARD 1 -s {resources["ip"]["loop"]} -d {resources["ip"]["dc"]} -j ACCEPT')
@@ -271,12 +284,3 @@ if __name__ == '__main__':
     os.system(f'sudo iptables -I FORWARD 1 -s {resources["ip"]["customer"]} -d {resources["ip"]["customer"]} -j ACCEPT')
     os.system(f'sudo iptables -I FORWARD 1 -s {resources["ip"]["customer"]} -d {resources["ip"]["loop"]} -j ACCEPT')
     os.system(f'sudo iptables -I FORWARD 1 -s {resources["ip"]["customer"]} -d {resources["ip"]["dc"]} -j ACCEPT')
-
-    # Visualising the graph
-    VG = networkx.drawing.nx_agraph.to_agraph(DG)
-
-    with open(path_output, 'w') as file:
-        file.write(str(VG))
-
-    VG.layout('dot')
-    VG.draw(f'{path_output}.png')

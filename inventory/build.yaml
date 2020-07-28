@@ -1,66 +1,17 @@
 ---
-aggs:
-  - name: aggs1
-    pod: 
-    dev_type: microsoft-sonic
-  - name: aggs2
-    pod:
-    dev_type: microsoft-sonic
-  - name: aggs3
-    pod:
-    dev_type: microsoft-sonic
-  - name: aggs4
-    pod:
-    dev_type: microsoft-sonic
 spines:
   - name: spine11
     pod: A
-    dev_type: microsoft-sonic
+    dev_type: nokia-srlinux
   - name: spine12
     pod: A
-    dev_type: microsoft-sonic
-  - name: spine13
-    pod: A
-    dev_type: microsoft-sonic
-  - name: spine14
-    pod: A
-    dev_type: microsoft-sonic
-  - name: spine21
-    pod: B
-    dev_type: microsoft-sonic
-  - name: spine22
-    pod: B
-    dev_type: microsoft-sonic
-  - name: spine23
-    pod: B
-    dev_type: microsoft-sonic
-  - name: spine24
-    pod: B
     dev_type: microsoft-sonic
 leafs:
   - name: leaf11
     pod: A
-    dev_type: microsoft-sonic
+    dev_type: nokia-srlinux
   - name: leaf12
     pod: A
-    dev_type: microsoft-sonic
-  - name: leaf13
-    pod: A
-    dev_type: microsoft-sonic
-  - name: leaf14
-    pod: A
-    dev_type: microsoft-sonic
-  - name: leaf21
-    pod: B
-    dev_type: microsoft-sonic
-  - name: leaf22
-    pod: B
-    dev_type: microsoft-sonic
-  - name: leaf23
-    pod: B
-    dev_type: microsoft-sonic
-  - name: leaf24
-    pod: B
     dev_type: microsoft-sonic
 hosts:
   - name: host1
@@ -71,28 +22,4 @@ hosts:
     pod: A
     dev_type: ubuntu
     connection_point: leaf12
-  - name: host3
-    pod: A
-    dev_type: ubuntu
-    connection_point: leaf13
-  - name: host4
-    pod: A
-    dev_type: ubuntu
-    connection_point: leaf14
-  - name: host5
-    pod: B
-    dev_type: ubuntu
-    connection_point: leaf21
-  - name: host6
-    pod: B
-    dev_type: ubuntu
-    connection_point: leaf22
-  - name: host7
-    pod: B
-    dev_type: ubuntu
-    connection_point: leaf23
-  - name: host8
-    pod: B
-    dev_type: ubuntu
-    connection_point: leaf24
 ...
