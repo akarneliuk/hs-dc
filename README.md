@@ -27,6 +27,9 @@ The following ideas are in the pipeline to be implmeneted:
 - Monitoring (tbd)
 
 ## Change log
+Release `0.5.2`:
+- Fixed bug with improper calculation of the fabric IP addresses.
+
 Release `0.5.1`:
 - Added the coditionals to the build of the network graph so that it verifies if the devices' types are presented in the `inventory/build.yaml`.
 - Added the support for the CentOS 8.
